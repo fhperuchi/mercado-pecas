@@ -4,13 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
 import 'material-ui/'
 
+import Constants from './Constants'
 import Menu from './Menu'
 
-const style = {
-    margin: 12,
-};
-
-function entrar() {
+function login() {
     alert('OK');
     browserHistory.push('/')
 }
@@ -20,7 +17,7 @@ const Login = () => (
         <Menu titulo="Entrar"/>
         <TextField floatingLabelText="E-mail" /><br/>
         <TextField floatingLabelText="Senha" type={'password'} /><br/>
-        <RaisedButton label="Entrar" primary={true} style={style} onClick={entrar} />
+        <RaisedButton label="Entrar" primary={true} style={Constants.STYLES.textField} onClick={login} />
     </div>
 );
 

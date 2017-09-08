@@ -10,8 +10,8 @@ import Login from './Login';
 
 const muiTheme = getMuiTheme({
     appBar: {
-        height: 50,
-    },
+        height: 50
+    }
 });
 
 ReactDOM.render(

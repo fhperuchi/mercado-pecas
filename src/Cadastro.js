@@ -4,11 +4,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
 
+import Constants from './Constants'
 import Menu from './Menu'
-
-const style = {
-    margin: 12,
-};
 
 function cadastrarPeca() {
     alert('OK');
@@ -22,7 +19,7 @@ const Cadastro = () => (
         <TextField floatingLabelText="Nome da peça" /><br/>
         <TextField floatingLabelText="Valor da peça" /><br/>
         <DatePickerPt name="Data final do anúncio" />
-        <RaisedButton label="Cadastrar peça" primary={true} style={style} onClick={cadastrarPeca} />
+        <RaisedButton label="Cadastrar peça" primary={true} style={Constants.STYLES.textField} onClick={cadastrarPeca} />
     </div>
 );
 
