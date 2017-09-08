@@ -2,7 +2,6 @@ import React from 'react';
 import DatePickerPt from './component/DatePickerPt';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { browserHistory } from 'react-router';
 import Divider from 'material-ui/Divider';
 
 import Utils from './Util'
@@ -11,7 +10,7 @@ import Menu from './Menu'
 
 function cadastrarPeca() {
     alert('OK');
-    browserHistory.push('/')
+    Utils.home()
 }
 
 const Cadastro = () => (

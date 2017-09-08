@@ -5,5 +5,4 @@ const Utils = {
         browserHistory.push('/');
     }
 };
-
 export default Utils;

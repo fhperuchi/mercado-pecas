@@ -1,7 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { browserHistory } from 'react-router';
 import Divider from 'material-ui/Divider';
 
 import Utils from './Util'
@@ -10,7 +9,7 @@ import Menu from './Menu'
 
 function login() {
     alert('OK');
-    browserHistory.push('/')
+    Utils.home()
 }
 
 const Login = () => (
@@ -23,5 +22,4 @@ const Login = () => (
         <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Utils.home}  />
     </div>
 );
-
 export default Login;

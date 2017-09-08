@@ -1,7 +1,6 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { browserHistory } from 'react-router';
 import AutoComplete from 'material-ui/AutoComplete';
 import Divider from 'material-ui/Divider';
 
@@ -11,7 +10,7 @@ import Menu from './Menu'
 
 function cadastrarUsuario() {
     alert('OK');
-    browserHistory.push('/')
+    Utils.home()
 }
 
 const Usuario = () => (
