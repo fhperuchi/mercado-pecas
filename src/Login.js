@@ -2,8 +2,9 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
-import 'material-ui/'
+import Divider from 'material-ui/Divider';
 
+import Utils from './Util'
 import Constants from './Constants'
 import Menu from './Menu'
 
@@ -17,7 +18,9 @@ const Login = () => (
         <Menu titulo="Entrar"/>
         <TextField floatingLabelText="E-mail" /><br/>
         <TextField floatingLabelText="Senha" type={'password'} /><br/>
-        <RaisedButton label="Entrar" primary={true} style={Constants.STYLES.textField} onClick={login} />
+        <br/><Divider /><br/>
+        <RaisedButton label="Entrar" primary style={Constants.STYLES.textField} onClick={login} />
+        <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Utils.home}  />
     </div>
 );
 
