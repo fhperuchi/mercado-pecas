@@ -5,21 +5,35 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import { browserHistory } from 'react-router';
 
-const Menu = () => (
-    <div>
-        <AppBar title="Mercado das Peças"
-                iconElementLeft={<IconMenu
-                    iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                    anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                    targetOrigin={{horizontal: 'left', vertical: 'top'}}>
-                    <MenuItem primaryText="Buscar peças"/>
-                    <MenuItem primaryText="Cadastrar peça para venda"/>
-                    <MenuItem primaryText="Sair"/>
-                </IconMenu>}
-                iconElementRight={<FlatButton label="Entrar" />}
-        />
-    </div>
-);
+class Menu extends React.Component {
+
+    render() {
+        return (
+            <div>
+                <AppBar title={this.props.titulo}
+                        iconElementLeft={<IconMenu
+                            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+                            anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                            targetOrigin={{horizontal: 'left', vertical: 'top'}}>
+                            <MenuItem primaryText="Buscar peças" onClick={() => {
+                                browserHistory.push('/')
+                            }}/>
+                            <MenuItem primaryText="Cadastrar peça para venda" onClick={() => {
+                                browserHistory.push('cadastrar')
+                            }}/>
+                            <MenuItem primaryText="Seus dados" onClick={() => {
+                                browserHistory.push('usuario')
+                            }}/>
+                        </IconMenu>}
+                        iconElementRight={<FlatButton label="Entrar" onClick={() => {
+                            browserHistory.push('login')
+                        }} />}
+                />
+            </div>
+        );
+    }
+}
 
 export default Menu;
