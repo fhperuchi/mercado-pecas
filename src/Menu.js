@@ -7,7 +7,7 @@ import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { browserHistory } from 'react-router';
 
-class Menu extends React.Component {
+export default class Menu extends React.Component {
 
     render() {
         return (
@@ -38,5 +38,3 @@ class Menu extends React.Component {
         );
     }
 }
-
-export default Menu;

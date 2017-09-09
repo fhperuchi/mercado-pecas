@@ -5,13 +5,13 @@ import AutoComplete from 'material-ui/AutoComplete';
 import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 
-import Utils from './Util'
+import Util from './Util'
 import Constants from './Constants'
 import Menu from './Menu'
 import BottomBar from './BottomBar'
 
 function cadastrarUsuario() {
-    Utils.goTo('/')
+    Util.goTo('/')
 }
 
 const styles = {
@@ -23,9 +23,9 @@ const styles = {
     },
 };
 
-class Usuario extends React.Component {
+export default class Usuario extends React.Component {
     state = {
-        checked: false,
+        checked: true,
     }
 
     updateCheck() {
@@ -53,7 +53,6 @@ class Usuario extends React.Component {
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={Constants.CIDADES}/>
                 <Checkbox
-                    defaultChecked={true}
                     label="Notificações"
                     style={styles.checkbox}
                     checked={this.state.checked}
@@ -61,10 +60,9 @@ class Usuario extends React.Component {
                 />
                 <br/><Divider /><br/>
                 <RaisedButton label="Salvar dados" primary style={Constants.STYLES.textField} onClick={cadastrarUsuario} />
-                <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Utils.home} />
+                <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Util.home} />
                 <br/><br/><BottomBar />
             </div>
         )
     }
 }
-export default Usuario;

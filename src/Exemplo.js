@@ -1,10 +1,8 @@
 import React from 'react';
-class Exemplo extends React.Component {
+export default class Exemplo extends React.Component {
     constructor() {
         super();
-        this.state = {
-            value: 'teste',
-        };
+        this.state = { value: 'teste' };
     }
 
     render() {
@@ -15,4 +13,3 @@ class Exemplo extends React.Component {
         );
     }
 }
-export default Exemplo;

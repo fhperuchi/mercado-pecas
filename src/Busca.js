@@ -7,7 +7,18 @@ import Divider from 'material-ui/Divider';
 import Constants from './Constants'
 import Menu from './Menu'
 
-class Busca extends React.Component {
+export default class Busca extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {codigo: '', nome: '', };
+    }
+
+    salvaAlteracao(nomeInput,evento){
+        var campoSendoAlterado = {};
+        campoSendoAlterado[nomeInput] = evento.target.value;
+        this.setState(campoSendoAlterado);
+    }
 
     render() {
         return (
@@ -16,6 +27,7 @@ class Busca extends React.Component {
                     titulo="Buscar peças"/>
                 <TextField
                     id={"codigo"}
+                    value={this.state.codigo} onChange={this.salvaAlteracao.bind(this,'codigo')}
                     floatingLabelText="Código da peça"/><br/>
                 <TextField
                     id={"nome"}
@@ -38,4 +50,4 @@ class Busca extends React.Component {
         );
     }
 }
-export default Busca;
+//export default Busca;

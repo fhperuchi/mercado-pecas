@@ -8,7 +8,7 @@ const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
 const nearbyIcon = <IconLocationOn />;
 
-class BottomBar extends React.Component {
+export default class BottomBar extends React.Component {
     state = {
         selectedIndex: 0,
     };
@@ -39,4 +39,3 @@ class BottomBar extends React.Component {
         );
     }
 }
-export default BottomBar;

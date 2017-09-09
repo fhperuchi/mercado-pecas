@@ -1,7 +1,7 @@
 import { browserHistory } from 'react-router';
 import numeral from 'numeral';
 
-const Utils = {
+const Util = {
 
     formatMoney(value) {
         return numeral(value).format('$ 0,0.00');
@@ -19,4 +19,4 @@ const Utils = {
         browserHistory.push('/');
     }
 };
-export default Utils;
+export default Util;

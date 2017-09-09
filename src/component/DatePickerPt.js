@@ -1,7 +1,7 @@
 import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 
-class DatePickerPt extends React.Component {
+export default class DatePickerPt extends React.Component {
 
     render() {
         const IntlPolyfill = require('intl');
@@ -13,10 +13,9 @@ class DatePickerPt extends React.Component {
                 autoOk={true}
                 cancelLabel='Cancelar'
                 container={'inline'}
-                locale="pt"
+                locale='pt'
                 DateTimeFormat={DateTimeFormat}
             />
         );
     }
 }
-export default DatePickerPt;
