@@ -8,8 +8,7 @@ import Constants from './Constants'
 import Menu from './Menu'
 
 function login() {
-    alert('OK');
-    Utils.home()
+    Utils.goTo('/')
 }
 
 const Login = () => (

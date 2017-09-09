@@ -7,9 +7,9 @@ import Divider from 'material-ui/Divider';
 import Utils from './Util'
 import Constants from './Constants'
 import Menu from './Menu'
+import BottomBar from './BottomBar'
 
 function cadastrarPeca() {
-    alert('OK');
     Utils.home()
 }
 
@@ -22,7 +22,8 @@ const Cadastro = () => (
         <DatePickerPt name="Data final do anúncio" />
         <br/><Divider /><br/>
         <RaisedButton label="Cadastrar peça" primary style={Constants.STYLES.textField} onClick={cadastrarPeca} />
-        <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Utils.home}  />
+        <RaisedButton label="Voltar" secondary style={Constants.STYLES.textField} onClick={Utils.home}  /><br/>
+        <br/><BottomBar />
     </div>
 );
 export default Cadastro;

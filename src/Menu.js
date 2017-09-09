@@ -23,6 +23,9 @@ class Menu extends React.Component {
                             <MenuItem primaryText="Cadastrar peça para venda" onClick={() => {
                                 browserHistory.push('cadastrar')
                             }}/>
+                            <MenuItem primaryText="Minhas peças" onClick={() => {
+                                browserHistory.push('minhasPecas')
+                            }}/>
                             <MenuItem primaryText="Seus dados" onClick={() => {
                                 browserHistory.push('usuario')
                             }}/>

@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Router, Route, browserHistory } from 'react-router'
+
 import Busca from './Busca';
 import Cadastra from './Cadastro';
 import Usuario from './Usuario';
 import Login from './Login';
+import MinhasPecas from './MinhasPecas';
 
 const muiTheme = getMuiTheme({
     appBar: {
@@ -19,6 +21,7 @@ ReactDOM.render(
         <Router history={browserHistory}>
             <Route path="/" component={Busca} />
             <Route path="cadastrar" component={Cadastra} />
+            <Route path="minhasPecas" component={MinhasPecas} />
             <Route path="usuario" component={Usuario} />
             <Route path="login" component={Login} />
         </Router>

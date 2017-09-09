@@ -14,11 +14,9 @@ class DatePickerPt extends React.Component {
                 cancelLabel='Cancelar'
                 container={'inline'}
                 locale="pt"
-                onDismiss={() => alert('cancelado')}
                 DateTimeFormat={DateTimeFormat}
             />
         );
     }
 }
-
 export default DatePickerPt;
