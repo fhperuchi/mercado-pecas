@@ -16,6 +16,10 @@ import Util from './Util'
 
 export default class MinhasPecas extends React.Component {
 
+    componentWillMount() {
+        alert('lista de peças vai ser carregada...')
+    }
+
     render() {
         return (
             <div>
@@ -53,5 +57,9 @@ export default class MinhasPecas extends React.Component {
                 <br/><BottomBar />
             </div>
         );
+    }
+
+    componentDidMount() {
+        alert('lista de peças carregada!')
     }
 };
