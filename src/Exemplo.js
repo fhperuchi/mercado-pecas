@@ -1,5 +1,7 @@
 import React from 'react';
+
 export default class Exemplo extends React.Component {
+
     constructor() {
         super();
         this.state = { value: 'teste' };

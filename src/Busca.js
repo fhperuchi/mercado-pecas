@@ -11,12 +11,12 @@ export default class Busca extends React.Component {
 
     constructor() {
         super();
-        this.state = {codigo: '', nome: '', };
+        this.state = {codigo: '', nome: ''};
     }
 
-    salvaAlteracao(nomeInput,evento){
+    salvaAlteracao(nomeInput, event){
         var campoSendoAlterado = {};
-        campoSendoAlterado[nomeInput] = evento.target.value;
+        campoSendoAlterado[nomeInput] = event.target.value;
         this.setState(campoSendoAlterado);
     }
 
@@ -27,10 +27,13 @@ export default class Busca extends React.Component {
                     titulo="Buscar peças"/>
                 <TextField
                     id={"codigo"}
-                    value={this.state.codigo} onChange={this.salvaAlteracao.bind(this,'codigo')}
+                    value={this.state.codigo}
+                    onChange={this.salvaAlteracao.bind(this,'codigo')}
                     floatingLabelText="Código da peça"/><br/>
                 <TextField
                     id={"nome"}
+                    value={this.state.nome}
+                    onChange={this.salvaAlteracao.bind(this,'nome')}
                     floatingLabelText="Nome da peça"/><br/>
                 <DatePickerPt
                     id={"dataInicio"}
@@ -50,4 +53,3 @@ export default class Busca extends React.Component {
         );
     }
 }
-//export default Busca;
