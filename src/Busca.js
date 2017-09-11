@@ -4,8 +4,10 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
+import './css/styles.css'
 import Constants from './Constants';
 import Menu from './component/Menu';
+
 
 export default class Busca extends React.Component {
 
@@ -34,9 +36,10 @@ export default class Busca extends React.Component {
                     titulo="Buscar peças"/>
                 <TextField
                     id={"codigo"}
+                    style={Constants.STYLES.tamanhoMaior}
                     value={this.state.codigo}
                     onChange={this.salvaAlteracao.bind(this, 'codigo')}
-                    floatingLabelText="Código da peça"/><br/>
+                    floatingLabelText="Código da peça (digite sem espaços, pontos ou traços"/><br/>
                 <TextField
                     id={"nome"}
                     value={this.state.nome}

@@ -5737,6 +5737,9 @@ for (let i = 0; i < estadosCidades.estados.length; i++) {
 
 const Constants = {
     STYLES: {
+        tamanhoMaior: {
+            width: "450px"
+        },
         textField: {
             marginLeft: 20
         },
