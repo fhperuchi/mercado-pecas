@@ -3,17 +3,18 @@ import DatePickerPt from './component/DatePickerPt';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import {Link} from 'react-router';
 
-import Util from './Util'
-import Constants from './Constants'
-import Menu from './Menu'
-import BottomBar from './BottomBar'
+import Constants from './Constants';
+import Menu from './component/Menu';
+import BottomBar from './BottomBar';
 
-function cadastrarPeca() {
-    Util.home()
-}
 
 export default class Cadastro extends React.Component {
+
+    cadastrarPeca = () => {
+        alert('Peça cadastrada!')
+    };
 
     render() {
         return (
@@ -27,16 +28,17 @@ export default class Cadastro extends React.Component {
                     floatingLabelText="Valor da peça"/><br/>
                 <DatePickerPt
                     name="Data final do anúncio"/>
-                <br/><Divider /><br/>
+                <br/><Divider/><br/>
                 <RaisedButton label="Cadastrar peça"
                               primary
                               style={Constants.STYLES.textField}
-                              onClick={cadastrarPeca}/>
-                <RaisedButton label="Voltar"
-                              secondary
-                              style={Constants.STYLES.textField}
-                              onClick={Util.home}/><br/>
-                <br/><BottomBar />
+                              onClick={this.cadastrarPeca}/>
+                <Link to="/">
+                    <RaisedButton label="Voltar"
+                                  secondary
+                                  style={Constants.STYLES.textField}/><br/>
+                </Link>
+                <br/><BottomBar/>
             </div>
         );
     }

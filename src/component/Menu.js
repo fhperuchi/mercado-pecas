@@ -4,8 +4,9 @@ import FlatButton from 'material-ui/FlatButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import { browserHistory } from 'react-router';
+import MenuIcon from 'material-ui/svg-icons/navigation/menu';
+import {browserHistory} from 'react-router';
+
 
 export default class Menu extends React.Component {
 
@@ -13,10 +14,9 @@ export default class Menu extends React.Component {
         return (
             <div>
                 <AppBar title={this.props.titulo}
-                        iconElementLeft={<IconMenu
-                            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                            anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                            targetOrigin={{horizontal: 'left', vertical: 'top'}}>
+                        iconElementLeft={<IconMenu iconButtonElement={<IconButton><MenuIcon/></IconButton>}
+                                                   anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                                                   targetOrigin={{horizontal: 'left', vertical: 'top'}}>
                             <MenuItem primaryText="Buscar peças" onClick={() => {
                                 browserHistory.push('/')
                             }}/>
@@ -32,7 +32,7 @@ export default class Menu extends React.Component {
                         </IconMenu>}
                         iconElementRight={<FlatButton label="Entrar" onClick={() => {
                             browserHistory.push('login')
-                        }} />}
+                        }}/>}
                 />
             </div>
         );

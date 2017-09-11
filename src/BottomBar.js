@@ -1,12 +1,14 @@
 import React from 'react';
-import FontIcon from 'material-ui/FontIcon';
+
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
+import RecentsIcon from 'material-ui/svg-icons/communication/business';
+import FavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
-const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const nearbyIcon = <IconLocationOn />;
+const recentsIcon = <RecentsIcon/>;
+const favIcon = <FavoriteIcon/>;
+const locationIcon = <IconLocationOn/>;
 
 export default class BottomBar extends React.Component {
     state = {
@@ -17,21 +19,21 @@ export default class BottomBar extends React.Component {
 
     render() {
         return (
-            <Paper zDepth={1}>
+            <Paper zDepth={2}>
                 <BottomNavigation selectedIndex={this.state.selectedIndex}>
                     <BottomNavigationItem
-                        label="Recents"
+                        label="Vistas recentemente"
                         icon={recentsIcon}
                         onClick={() => this.select(0)}
                     />
                     <BottomNavigationItem
-                        label="Favorites"
-                        icon={favoritesIcon}
+                        label="Favoritas"
+                        icon={favIcon}
                         onClick={() => this.select(1)}
                     />
                     <BottomNavigationItem
-                        label="Nearby"
-                        icon={nearbyIcon}
+                        label="Raio de 100 km"
+                        icon={locationIcon}
                         onClick={() => this.select(2)}
                     />
                 </BottomNavigation>

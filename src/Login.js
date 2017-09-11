@@ -2,16 +2,17 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import {Link} from 'react-router';
 
-import Util from './Util'
-import Constants from './Constants'
-import Menu from './Menu'
+import Constants from './Constants';
+import Menu from './component/Menu';
 
-function login() {
-    Util.goTo('/')
-}
 
 export default class Login extends React.Component {
+
+    login = () => {
+        alert('Logado!')
+    }
 
     render() {
         return (
@@ -23,16 +24,19 @@ export default class Login extends React.Component {
                 <TextField
                     floatingLabelText="Senha"
                     type={'password'}/><br/>
-                <br/><Divider /><br/>
-                <RaisedButton
-                    label="Entrar"
-                    primary
-                    style={Constants.STYLES.textField}
-                    onClick={login}/>
-                <RaisedButton
-                    label="Voltar"
-                    secondary style={Constants.STYLES.textField}
-                    onClick={Util.home}/>
+                <br/><Divider/><br/>
+                <Link to="/">
+                    <RaisedButton
+                        label="Entrar"
+                        primary
+                        style={Constants.STYLES.textField}
+                        onClick={this.login}/>
+                </Link>
+                <Link to="/">
+                    <RaisedButton
+                        label="Voltar"
+                        secondary style={Constants.STYLES.textField}/>
+                </Link>
             </div>
         );
     }

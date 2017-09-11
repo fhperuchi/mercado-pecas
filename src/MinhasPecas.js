@@ -1,18 +1,12 @@
 import React from 'react';
-import {
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaderColumn,
-    TableRow,
-    TableRowColumn,
-} from 'material-ui/Table';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
+import {Link} from 'react-router';
 
-import Menu from './Menu'
-import BottomBar from './BottomBar'
-import Constants from './Constants'
-import Util from './Util'
+import Menu from './component/Menu';
+import BottomBar from './BottomBar';
+import Constants from './Constants';
+import Util from './Util';
 
 export default class MinhasPecas extends React.Component {
 
@@ -50,11 +44,12 @@ export default class MinhasPecas extends React.Component {
                     label="Remover"
                     primary
                     style={Constants.STYLES.textField}/>
-                <RaisedButton label="Voltar"
-                              secondary
-                              style={Constants.STYLES.textField}
-                              onClick={Util.home}/><br/>
-                <br/><BottomBar />
+                <Link to="/">
+                    <RaisedButton label="Voltar"
+                                  secondary
+                                  style={Constants.STYLES.textField}/><br/>
+                </Link>
+                <br/><BottomBar/>
             </div>
         );
     }

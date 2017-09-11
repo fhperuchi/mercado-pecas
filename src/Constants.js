@@ -5739,6 +5739,9 @@ const Constants = {
     STYLES: {
         textField: {
             marginLeft: 20
+        },
+        checkbox: {
+            marginBottom: 16,
         }
     },
     ESTADOS: estados,
