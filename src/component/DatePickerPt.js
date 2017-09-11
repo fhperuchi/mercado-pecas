@@ -3,10 +3,6 @@ import DatePicker from 'material-ui/DatePicker';
 
 export default class DatePickerPt extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const IntlPolyfill = require('intl');
         let DateTimeFormat = IntlPolyfill.DateTimeFormat;

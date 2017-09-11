@@ -18,8 +18,8 @@ export default class Busca extends React.Component {
             nome: '',
             aplicacao: '',
             valorMaximo: '',
-            dataInicio:'',
-            dataFim:''
+            dataInicio: null,
+            dataFim: null
         };
     }
 
@@ -29,18 +29,7 @@ export default class Busca extends React.Component {
         this.setState(field);
     };
 
-    handleChangeInicio = (event, value) => {
-        this.setState({dataInicio: value});
-    };
-
-    handleChangeFim = (event, value) => {
-        this.setState({dataFim: value});
-    };
-
     render() {
-        // const IntlPolyfill = require('intl');
-        // let DateTimeFormat = IntlPolyfill.DateTimeFormat;
-        // require('intl/locale-data/jsonp/pt');
         return (
             <div>
                 <Menu
@@ -69,12 +58,24 @@ export default class Busca extends React.Component {
                     floatingLabelText="Valor máximo"/><br/>
                 <DatePickerPt
                     id={"dataInicio"}
+                    value={this.state.dataInicio}
                     hintText={"Data inicial do anúncio"}
-                    onChange={this.handleChangeInicio} />
+                    onChange={(event, date) => {
+                        this.setState({dataInicio: date})
+                    }}
+                    onDismiss={() => {
+                        this.setState({dataInicio: null})
+                    }}/>
                 <DatePickerPt
-                    id={"dataFinal"}
+                    id={"dataFim"}
+                    value={this.state.dataFim}
                     hintText={"Data final do anúncio"}
-                    onChange={this.handleChangeFim} />
+                    onChange={(event, date) => {
+                        this.setState({dataFim: date})
+                    }}
+                    onDismiss={() => {
+                        this.setState({dataFim: null})
+                    }}/>
                 <br/>
                 <Divider/>
                 <br/>
