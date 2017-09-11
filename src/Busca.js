@@ -74,7 +74,7 @@ export default class Busca extends React.Component {
                     primary={true}
                     style={Constants.STYLES.textField}
                     onClick={() => {
-                        alert(this.state.codigo)
+                        alert(this.state.dataInicio)
                     }}/>
             </div>
         );
