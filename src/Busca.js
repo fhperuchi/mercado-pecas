@@ -1,11 +1,11 @@
 import React from 'react';
-import DatePickerPt from './component/DatePickerPt';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 
 import './css/styles.css'
 import Constants from './Constants';
+import DatePickerPt from './component/DatePickerPt';
 import Menu from './component/Menu';
 
 
@@ -23,13 +23,24 @@ export default class Busca extends React.Component {
         };
     }
 
-    salvaAlteracao(nomeInput, event) {
-        var campoSendoAlterado = {};
-        campoSendoAlterado[nomeInput] = event.target.value;
-        this.setState(campoSendoAlterado);
-    }
+    salvaAlteracao = (nomeInput, event) => {
+        var field = {};
+        field[nomeInput] = event.target.value;
+        this.setState(field);
+    };
+
+    handleChangeInicio = (event, value) => {
+        this.setState({dataInicio: value});
+    };
+
+    handleChangeFim = (event, value) => {
+        this.setState({dataFim: value});
+    };
 
     render() {
+        // const IntlPolyfill = require('intl');
+        // let DateTimeFormat = IntlPolyfill.DateTimeFormat;
+        // require('intl/locale-data/jsonp/pt');
         return (
             <div>
                 <Menu
@@ -58,14 +69,12 @@ export default class Busca extends React.Component {
                     floatingLabelText="Valor máximo"/><br/>
                 <DatePickerPt
                     id={"dataInicio"}
-                    onChange={this.salvaAlteracao.bind(this, 'dataInicio')}
-                    value={this.state.dataInicio}
-                    name="Data inicial do anúncio"/>
+                    hintText={"Data inicial do anúncio"}
+                    onChange={this.handleChangeInicio} />
                 <DatePickerPt
-                    id={"dataFim"}
-                    onChange={this.salvaAlteracao.bind(this, 'dataFim')}
-                    value={this.state.dataFim}
-                    name="Data final do anúncio"/>
+                    id={"dataFinal"}
+                    hintText={"Data final do anúncio"}
+                    onChange={this.handleChangeFim} />
                 <br/>
                 <Divider/>
                 <br/>
@@ -74,7 +83,7 @@ export default class Busca extends React.Component {
                     primary={true}
                     style={Constants.STYLES.textField}
                     onClick={() => {
-                        alert(this.state.dataInicio)
+                        alert(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/>
             </div>
         );
