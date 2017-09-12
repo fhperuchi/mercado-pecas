@@ -1,7 +1,27 @@
 import React from 'react';
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 import Util from '../util/Util'
+
+// mock
+const pecas = [
+    {
+        _id: '1',
+        codigos: 'RCCR00384, RCCR00452, RCCS00584, RCCR00384, RCCR00452, RCCS00584',
+        nome: 'Cilindro de roda',
+        aplicacoes: 'Gol, Parati',
+        local: 'Limeira, São Paulo',
+        valor: Util.formatMoney(100.1)
+    },
+    {
+        _id: '2',
+        codigos: 'RPDI00400',
+        nome: 'Disco de freio',
+        aplicacoes: 'Fiesta, Focus',
+        local: 'Piracicaba, São Paulo',
+        valor: Util.formatMoney(10000.21)
+    }
+];
 
 export default class ListaPecas extends React.Component {
 
@@ -17,21 +37,16 @@ export default class ListaPecas extends React.Component {
                         <TableHeaderColumn>Valor</TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
-                <TableBody>
-                    <TableRow>
-                        <TableRowColumn>RCCR00384, RCCR00452</TableRowColumn>
-                        <TableRowColumn>Cilindro de roda</TableRowColumn>
-                        <TableRowColumn>Gol, Parati</TableRowColumn>
-                        <TableRowColumn>Limeira, São Paulo</TableRowColumn>
-                        <TableRowColumn>{Util.formatMoney(100.1)}</TableRowColumn>
+                <TableBody showRowHover={true}>
+                    {pecas.map((peca, index) => (
+                    <TableRow key={peca._id}>
+                        <TableRowColumn>{peca.codigos}</TableRowColumn>
+                        <TableRowColumn>{peca.nome}</TableRowColumn>
+                        <TableRowColumn>{peca.aplicacoes}</TableRowColumn>
+                        <TableRowColumn>{peca.local}</TableRowColumn>
+                        <TableRowColumn>{peca.valor}</TableRowColumn>
                     </TableRow>
-                    <TableRow>
-                        <TableRowColumn>RPDI00400</TableRowColumn>
-                        <TableRowColumn>Disco de freio</TableRowColumn>
-                        <TableRowColumn>Fiesta, Focus</TableRowColumn>
-                        <TableRowColumn>Piracicaba, São Paulo</TableRowColumn>
-                        <TableRowColumn>{Util.formatMoney(10000.21)}</TableRowColumn>
-                    </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         );
