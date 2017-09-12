@@ -16,7 +16,6 @@ import BottomBar from './BottomBar';
 export default class Usuario extends React.Component {
 
     cadastrarUsuario = () => {
-        alert(this.state.complemento);
         alert('Usuario cadastrado');
     }
 
@@ -35,9 +34,9 @@ export default class Usuario extends React.Component {
     render() {
         return (
             <div>
-                <Menu titulo="Seus dados"/>
+                <Menu titulo="Usuário"/>
                 <TextField floatingLabelText="Nome da empresa"/><TextField floatingLabelText="E-mail"/><br/>
-                <TextField floatingLabelText="CNPJ"/><TextField floatingLabelText="Telefone"/><br/>
+                <TextField floatingLabelText="CPF ou CNPJ"/><TextField floatingLabelText="Telefone"/><br/>
                 <TextField floatingLabelText="Endereço"/><TextField floatingLabelText="Numero" type={'number'}/><br/>
                 <TextField floatingLabelText="Bairro"/><SelectField floatingLabelText="Complemento"
                                                                     value={this.state.complemento}
@@ -61,10 +60,12 @@ export default class Usuario extends React.Component {
                     onCheck={this.updateCheck.bind(this)}
                 />
                 <br/><Divider/><br/>
-                <RaisedButton
-                    label="Salvar dados"
-                    primary style={Constants.STYLES.textField}
-                    onClick={this.cadastrarUsuario}/>
+                <Link to="/">
+                    <RaisedButton
+                        label="Salvar dados"
+                        primary style={Constants.STYLES.textField}
+                        onClick={this.cadastrarUsuario}/>
+                </Link>
                 <Link to="/">
                     <RaisedButton
                         label="Voltar"

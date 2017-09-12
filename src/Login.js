@@ -32,10 +32,11 @@ export default class Login extends React.Component {
                         style={Constants.STYLES.textField}
                         onClick={this.login}/>
                 </Link>
-                <Link to="/">
+                <Link to="/usuario">
                     <RaisedButton
-                        label="Voltar"
-                        secondary style={Constants.STYLES.textField}/>
+                        label="Cadastrar usuário"
+                        primary
+                        style={Constants.STYLES.textField} />
                 </Link>
             </div>
         );

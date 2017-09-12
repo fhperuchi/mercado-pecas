@@ -2,12 +2,13 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 
 import './css/styles.css'
 import Constants from './Constants';
 import DatePickerPt from './component/DatePickerPt';
 import Menu from './component/Menu';
-
+import Util from './Util';
 
 export default class Busca extends React.Component {
 
@@ -19,7 +20,8 @@ export default class Busca extends React.Component {
             aplicacao: '',
             valorMaximo: '',
             dataInicio: null,
-            dataFim: null
+            dataFim: null,
+            raioKm: ''
         };
     }
 
@@ -76,9 +78,13 @@ export default class Busca extends React.Component {
                     onDismiss={() => {
                         this.setState({dataFim: null})
                     }}/>
-                <br/>
-                <Divider/>
-                <br/>
+                <TextField
+                    id={"raioKm"}
+                    value={this.state.raioKm}
+                    type={'number'}
+                    onChange={this.salvaAlteracao.bind(this, 'raioKm')}
+                    floatingLabelText="Raio para busca"/> km
+                <br/><Divider/><br/>
                 <RaisedButton
                     label="Buscar peças"
                     primary={true}
@@ -86,6 +92,43 @@ export default class Busca extends React.Component {
                     onClick={() => {
                         alert(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/>
+                <br/><br/><Divider/>
+                <Table selectable={true} multiSelectable={true}>
+                    <TableHeader>
+                        <TableRow>
+                            <TableHeaderColumn>Códigos</TableHeaderColumn>
+                            <TableHeaderColumn>Nome (descrição)</TableHeaderColumn>
+                            <TableHeaderColumn>Aplicações</TableHeaderColumn>
+                            <TableHeaderColumn>Local</TableHeaderColumn>
+                            <TableHeaderColumn>Valor</TableHeaderColumn>
+                            <TableHeaderColumn>Ação</TableHeaderColumn>
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        <TableRow>
+                            <TableRowColumn>RCCR00384</TableRowColumn>
+                            <TableRowColumn>Cilindro de roda</TableRowColumn>
+                            <TableRowColumn>Gol, Parati</TableRowColumn>
+                            <TableRowColumn>Limeira, São Paulo</TableRowColumn>
+                            <TableRowColumn>{Util.formatMoney(100.1)}</TableRowColumn>
+                            <TableRowColumn>
+                                <RaisedButton label="Comprar"
+                                              primary/>
+                            </TableRowColumn>
+                        </TableRow>
+                        <TableRow>
+                            <TableRowColumn>RPDI00400</TableRowColumn>
+                            <TableRowColumn>Disco de freio</TableRowColumn>
+                            <TableRowColumn>Fiesta, Focus</TableRowColumn>
+                            <TableRowColumn>Piracicaba, São Paulo</TableRowColumn>
+                            <TableRowColumn>{Util.formatMoney(10000.21)}</TableRowColumn>
+                            <TableRowColumn>
+                                <RaisedButton label="Comprar" primary/>
+                            </TableRowColumn>
+                        </TableRow>
+                    </TableBody>
+                </Table><br/>
+                <RaisedButton label="Comprar selecionadas" primary/>
             </div>
         );
     }

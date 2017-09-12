@@ -2,6 +2,7 @@ import React from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from 'react-router';
+import Divider from 'material-ui/Divider';
 
 import Menu from './component/Menu';
 import BottomBar from './BottomBar';
@@ -11,35 +12,39 @@ import Util from './Util';
 export default class MinhasPecas extends React.Component {
 
     componentWillMount() {
-        alert('lista de peças vai ser carregada...')
+        console.log('lista de peças vai ser carregada...')
     }
 
     render() {
         return (
             <div>
-                <Menu titulo="Minhas peças"/>
-                <Table selectable={true}
-                       multiSelectable={true}>
+                <Menu titulo="Minhas peças"/><br/>
+
+                <Table selectable={true} multiSelectable={true}>
                     <TableHeader>
                         <TableRow>
-                            <TableHeaderColumn>Código</TableHeaderColumn>
-                            <TableHeaderColumn>Nome</TableHeaderColumn>
-                            <TableHeaderColumn>Valor (R$)</TableHeaderColumn>
+                            <TableHeaderColumn>Códigos</TableHeaderColumn>
+                            <TableHeaderColumn>Nome (descrição)</TableHeaderColumn>
+                            <TableHeaderColumn>Aplicações</TableHeaderColumn>
+                            <TableHeaderColumn>Valor</TableHeaderColumn>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         <TableRow>
                             <TableRowColumn>RCCR00384</TableRowColumn>
                             <TableRowColumn>Cilindro de roda</TableRowColumn>
-                            <TableRowColumn>{Util.formatNumber(100.1)}</TableRowColumn>
+                            <TableRowColumn>Gol, Parati</TableRowColumn>
+                            <TableRowColumn>{Util.formatMoney(100.1)}</TableRowColumn>
                         </TableRow>
                         <TableRow>
                             <TableRowColumn>RPDI00400</TableRowColumn>
                             <TableRowColumn>Disco de freio</TableRowColumn>
-                            <TableRowColumn>{Util.formatNumber(10000.21)}</TableRowColumn>
+                            <TableRowColumn>Fiesta, Focus</TableRowColumn>
+                            <TableRowColumn>{Util.formatMoney(10000.21)}</TableRowColumn>
                         </TableRow>
                     </TableBody>
                 </Table>
+                <br/><Divider/><br/>
                 <RaisedButton
                     label="Remover"
                     primary
@@ -55,6 +60,6 @@ export default class MinhasPecas extends React.Component {
     }
 
     componentDidMount() {
-        alert('lista de peças carregada!')
+        console.log('lista de peças carregada!')
     }
 };

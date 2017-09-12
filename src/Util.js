@@ -19,6 +19,10 @@ numeral.language('pt-BR');
 
 const Util = {
 
+    formatMoney(value) {
+        return numeral(value).format('R$ 0,0.00');
+    },
+
     formatNumber(value) {
         return numeral(value).format('0,0.00');
     }
