@@ -5744,7 +5744,7 @@ const Constants = {
             paddingTop: '17px'
         },
         tamanhoMaior: {
-            width: "450px"
+            width: '450px'
         },
         textField: {
             marginLeft: 20

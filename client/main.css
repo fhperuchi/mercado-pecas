@@ -1,4 +1,9 @@
-/* CSS declarations go here */
 body {
-    background-color: whitesmoke;
+    background-color: white;
+}
+
+/* exemplo de classe CSS para uso via atributo className do React */
+.styles-overriding-css-example {
+    width: 450px !important;
+    color: red !important;
 }

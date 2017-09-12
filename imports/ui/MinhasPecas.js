@@ -8,6 +8,27 @@ import BottomBar from './component/BottomBar';
 import Constants from './util/Constants';
 import ListaPecas from "./component/ListaPecas";
 
+// mock
+const pecas = [
+    {
+        _id: '1',
+        codigos: ['RCCR00384, RCCR00452, RCCS00584, RCCR00384, RCCR00452, RCCS00584'],
+        nome: 'Cilindro de roda',
+        aplicacoes: ['Gol, Parati'],
+        local: 'Limeira, São Paulo',
+        valor: 100.1
+    },
+    {
+        _id: '2',
+        codigos: ['RPDI00400'],
+        nome: 'Disco de freio',
+        aplicacoes: ['Fiesta, Focus'],
+        local: 'Piracicaba, São Paulo',
+        valor: 1324.21
+    }
+];
+
+
 export default class MinhasPecas extends React.Component {
 
     componentWillMount() {
@@ -18,7 +39,7 @@ export default class MinhasPecas extends React.Component {
         return (
             <div>
                 <TopBar titulo="Minhas peças"/><br/>
-                <ListaPecas/>
+                <ListaPecas pecas={pecas}/>
                 <br/><Divider/><br/>
                 <RaisedButton
                     label="Remover"

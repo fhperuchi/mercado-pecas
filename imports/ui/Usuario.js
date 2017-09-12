@@ -35,7 +35,7 @@ export default class Usuario extends React.Component {
         return (
             <div>
                 <TopBar titulo="Usuário"/>
-                <TextField floatingLabelText="Nome da empresa"/><TextField floatingLabelText="E-mail"/><br/>
+                <TextField floatingLabelText="E-mail"/><TextField floatingLabelText="Nome"/><br/>
                 <TextField floatingLabelText="CPF ou CNPJ"/><TextField floatingLabelText="Telefone"/><br/>
                 <TextField floatingLabelText="Endereço"/><TextField floatingLabelText="Numero" type={'number'}/><br/>
                 <TextField floatingLabelText="Bairro"/><SelectField floatingLabelText="Complemento"
