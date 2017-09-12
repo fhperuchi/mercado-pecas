@@ -90,7 +90,7 @@ export default class Busca extends React.Component {
                     primary={true}
                     style={Constants.STYLES.textField}
                     onClick={() => {
-                        alert(`${this.state.dataInicio}\n${this.state.dataFim}`)
+                        console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/>
                 <br/><br/><Divider/>
                 <Table selectable={true} multiSelectable={true}>
