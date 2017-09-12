@@ -7,16 +7,16 @@ import FavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import Constants from "../Constants";
 
-// const recentsIcon = <RecentsIcon/>;
-// const favIcon = <FavoriteIcon/>;
-// const locationIcon = <IconLocationOn/>;
+const recentsIcon = <RecentsIcon/>;
+const favIcon = <FavoriteIcon/>;
+const locationIcon = <IconLocationOn/>;
 
 export default class BottomBar extends React.Component {
-    /*state = {
+    state = {
         selectedIndex: 0,
     };
 
-    select = (index) => this.setState({selectedIndex: index});*/
+    select = (index) => this.setState({selectedIndex: index});
 
     render() {
         return (
