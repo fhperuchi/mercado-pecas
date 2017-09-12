@@ -4,11 +4,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 
-import './css/styles.css'
 import Constants from './Constants';
 import DatePickerPt from './component/DatePickerPt';
 import Menu from './component/Menu';
 import Util from './Util';
+import BottomBar from './component/BottomBar';
 
 export default class Busca extends React.Component {
 
@@ -128,7 +128,8 @@ export default class Busca extends React.Component {
                         </TableRow>
                     </TableBody>
                 </Table><br/>
-                <RaisedButton label="Comprar selecionadas" primary/>
+                <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
+                <BottomBar/>
             </div>
         );
     }

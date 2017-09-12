@@ -5,22 +5,24 @@ import Paper from 'material-ui/Paper';
 import RecentsIcon from 'material-ui/svg-icons/communication/business';
 import FavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import Constants from "../Constants";
 
-const recentsIcon = <RecentsIcon/>;
-const favIcon = <FavoriteIcon/>;
-const locationIcon = <IconLocationOn/>;
+// const recentsIcon = <RecentsIcon/>;
+// const favIcon = <FavoriteIcon/>;
+// const locationIcon = <IconLocationOn/>;
 
 export default class BottomBar extends React.Component {
-    state = {
+    /*state = {
         selectedIndex: 0,
     };
 
-    select = (index) => this.setState({selectedIndex: index});
+    select = (index) => this.setState({selectedIndex: index});*/
 
     render() {
         return (
-            <Paper zDepth={2}>
-                <BottomNavigation selectedIndex={this.state.selectedIndex}>
+            <Paper zDepth={2} style={Constants.STYLES.bottomBar}>
+                Mercado das Peças - todos os direitos reservados
+                {/*<BottomNavigation selectedIndex={this.state.selectedIndex}>
                     <BottomNavigationItem
                         label="Vistas recentemente"
                         icon={recentsIcon}
@@ -36,7 +38,7 @@ export default class BottomBar extends React.Component {
                         icon={locationIcon}
                         onClick={() => this.select(2)}
                     />
-                </BottomNavigation>
+                </BottomNavigation>*/}
             </Paper>
         );
     }

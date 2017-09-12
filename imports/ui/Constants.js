@@ -5737,6 +5737,12 @@ for (let i = 0; i < estadosCidades.estados.length; i++) {
 
 const Constants = {
     STYLES: {
+        bottomBar: {
+            'text-align': 'center',
+            'font-weight': 'bold',
+            height: 50,
+            'padding-top': '17px'
+        },
         tamanhoMaior: {
             width: "450px"
         },

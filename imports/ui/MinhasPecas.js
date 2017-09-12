@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 import Divider from 'material-ui/Divider';
 
 import Menu from './component/Menu';
-import BottomBar from './BottomBar';
+import BottomBar from './component/BottomBar';
 import Constants from './Constants';
 import Util from './Util';
 
@@ -53,8 +53,8 @@ export default class MinhasPecas extends React.Component {
                     <RaisedButton label="Voltar"
                                   secondary
                                   style={Constants.STYLES.textField}/><br/>
-                </Link>
-                <br/><BottomBar/>
+                </Link><br/>
+                <BottomBar/>
             </div>
         );
     }

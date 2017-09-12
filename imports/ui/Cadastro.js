@@ -9,7 +9,7 @@ import Delete from 'material-ui/svg-icons/action/delete';
 
 import Constants from './Constants';
 import Menu from './component/Menu';
-import BottomBar from './BottomBar';
+import BottomBar from './component/BottomBar';
 
 export default class Cadastro extends React.Component {
 
@@ -86,8 +86,8 @@ export default class Cadastro extends React.Component {
                     <RaisedButton label="Voltar"
                                   secondary
                                   style={Constants.STYLES.textField}/><br/>
-                </Link>
-                <br/><BottomBar/>
+                </Link><br/>
+                <BottomBar/>
             </div>
         );
     }

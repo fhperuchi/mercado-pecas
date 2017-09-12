@@ -10,7 +10,7 @@ import {Link} from 'react-router';
 
 import Constants from './Constants';
 import Menu from './component/Menu';
-import BottomBar from './BottomBar';
+import BottomBar from './component/BottomBar';
 
 
 export default class Usuario extends React.Component {
@@ -71,8 +71,8 @@ export default class Usuario extends React.Component {
                         label="Voltar"
                         secondary
                         style={Constants.STYLES.textField}/>
-                </Link>
-                <br/><br/><BottomBar/>
+                </Link><br/><br/>
+                <BottomBar/>
             </div>
         )
     }

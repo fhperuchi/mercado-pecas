@@ -2,25 +2,22 @@
   "name": "mercado-pecas",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "update": "meteor npm update"
+  },
   "dependencies": {
+    "babel-runtime": "^6.22.0",
+    "meteor-node-stubs": "~0.2.4",
     "intl": "^1.2.5",
     "intl-locales-supported": "^1.0.0",
     "material-ui": "^0.19.1",
     "numeral": "^1.5.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router": "^3.0.2",
-    "babel-runtime": "^6.22.0"
+    "react-router": "^3.0.2"
   },
   "devDependencies": {
-    "react-scripts": "0.8.5",
     "babel-plugin-transform-class-properties": "^6.22.0"
-  },
-  "scripts": {
-    "start":  "react-scripts start",
-    "build":  "react-scripts build",
-    "test":   "react-scripts test --env=jsdom",
-    "eject":  "react-scripts eject",
-    "update": "npm update"
   }
 }

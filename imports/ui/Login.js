@@ -6,7 +6,7 @@ import {Link} from 'react-router';
 
 import Constants from './Constants';
 import Menu from './component/Menu';
-
+import BottomBar from './component/BottomBar';
 
 export default class Login extends React.Component {
 
@@ -37,7 +37,8 @@ export default class Login extends React.Component {
                         label="Cadastrar usuário"
                         primary
                         style={Constants.STYLES.textField} />
-                </Link>
+                </Link><br/><br/>
+                <BottomBar/>
             </div>
         );
     }
