@@ -8,8 +8,8 @@ import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 import {Link} from 'react-router';
 
-import Constants from './Constants';
-import Menu from './component/Menu';
+import Constants from './util/Constants';
+import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 
 
@@ -34,7 +34,7 @@ export default class Usuario extends React.Component {
     render() {
         return (
             <div>
-                <Menu titulo="Usuário"/>
+                <TopBar titulo="Usuário"/>
                 <TextField floatingLabelText="Nome da empresa"/><TextField floatingLabelText="E-mail"/><br/>
                 <TextField floatingLabelText="CPF ou CNPJ"/><TextField floatingLabelText="Telefone"/><br/>
                 <TextField floatingLabelText="Endereço"/><TextField floatingLabelText="Numero" type={'number'}/><br/>

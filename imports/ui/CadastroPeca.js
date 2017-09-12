@@ -7,11 +7,11 @@ import {Link} from 'react-router';
 import {List, ListItem} from 'material-ui/List';
 import Delete from 'material-ui/svg-icons/action/delete';
 
-import Constants from './Constants';
-import Menu from './component/Menu';
+import Constants from './util/Constants';
+import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 
-export default class Cadastro extends React.Component {
+export default class CadastroPeca extends React.Component {
 
     constructor() {
         super();
@@ -33,7 +33,7 @@ export default class Cadastro extends React.Component {
     render() {
         return (
             <div>
-                <Menu titulo="Cadastrar peça para venda"/>
+                <TopBar titulo="Cadastrar peça para venda"/>
                 <TextField
                     id={"codigo"}
                     style={Constants.STYLES.tamanhoMaior}

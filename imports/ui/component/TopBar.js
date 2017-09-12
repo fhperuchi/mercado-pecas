@@ -10,7 +10,7 @@ import Paper from 'material-ui/Paper';
 
 
 
-export default class Menu extends React.Component {
+export default class TopBar extends React.Component {
 
     constructor() {
         super();

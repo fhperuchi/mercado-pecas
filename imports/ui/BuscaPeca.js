@@ -2,15 +2,14 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,} from 'material-ui/Table';
 
-import Constants from './Constants';
+import Constants from './util/Constants';
 import DatePickerPt from './component/DatePickerPt';
-import Menu from './component/Menu';
-import Util from './Util';
+import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
+import ListaPecas from "./component/ListaPecas";
 
-export default class Busca extends React.Component {
+export default class BuscaPeca extends React.Component {
 
     constructor() {
         super();
@@ -34,7 +33,7 @@ export default class Busca extends React.Component {
     render() {
         return (
             <div>
-                <Menu
+                <TopBar
                     titulo="Buscar peças"/>
                 <TextField
                     id={"codigo"}
@@ -93,41 +92,7 @@ export default class Busca extends React.Component {
                         console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/>
                 <br/><br/><Divider/>
-                <Table selectable={true} multiSelectable={true}>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHeaderColumn>Códigos</TableHeaderColumn>
-                            <TableHeaderColumn>Nome (descrição)</TableHeaderColumn>
-                            <TableHeaderColumn>Aplicações</TableHeaderColumn>
-                            <TableHeaderColumn>Local</TableHeaderColumn>
-                            <TableHeaderColumn>Valor</TableHeaderColumn>
-                            <TableHeaderColumn>Ação</TableHeaderColumn>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        <TableRow>
-                            <TableRowColumn>RCCR00384</TableRowColumn>
-                            <TableRowColumn>Cilindro de roda</TableRowColumn>
-                            <TableRowColumn>Gol, Parati</TableRowColumn>
-                            <TableRowColumn>Limeira, São Paulo</TableRowColumn>
-                            <TableRowColumn>{Util.formatMoney(100.1)}</TableRowColumn>
-                            <TableRowColumn>
-                                <RaisedButton label="Comprar"
-                                              primary/>
-                            </TableRowColumn>
-                        </TableRow>
-                        <TableRow>
-                            <TableRowColumn>RPDI00400</TableRowColumn>
-                            <TableRowColumn>Disco de freio</TableRowColumn>
-                            <TableRowColumn>Fiesta, Focus</TableRowColumn>
-                            <TableRowColumn>Piracicaba, São Paulo</TableRowColumn>
-                            <TableRowColumn>{Util.formatMoney(10000.21)}</TableRowColumn>
-                            <TableRowColumn>
-                                <RaisedButton label="Comprar" primary/>
-                            </TableRowColumn>
-                        </TableRow>
-                    </TableBody>
-                </Table><br/>
+                <ListaPecas/><br/>
                 <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
                 <BottomBar/>
             </div>

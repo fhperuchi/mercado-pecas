@@ -5,8 +5,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {browserHistory, Route, Router} from 'react-router'
 
-import Busca from '../imports/ui/Busca';
-import Cadastro from '../imports/ui/Cadastro';
+import BuscaPeca from '../imports/ui/BuscaPeca';
+import CadastroPeca from '../imports/ui/CadastroPeca';
 import Usuario from '../imports/ui/Usuario';
 import Login from '../imports/ui/Login';
 import MinhasPecas from '../imports/ui/MinhasPecas';
@@ -21,8 +21,8 @@ Meteor.startup(() => {
     render(
         <MuiThemeProvider muiTheme={muiTheme}>
             <Router history={browserHistory}>
-                <Route path="/" component={Busca}/>
-                <Route path="cadastrar" component={Cadastro}/>
+                <Route path="/" component={BuscaPeca}/>
+                <Route path="cadastrar" component={CadastroPeca}/>
                 <Route path="minhasPecas" component={MinhasPecas}/>
                 <Route path="usuario" component={Usuario}/>
                 <Route path="login" component={Login}/>

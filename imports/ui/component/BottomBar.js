@@ -5,7 +5,7 @@ import Paper from 'material-ui/Paper';
 import RecentsIcon from 'material-ui/svg-icons/communication/business';
 import FavoriteIcon from 'material-ui/svg-icons/action/favorite';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
-import Constants from "../Constants";
+import Constants from "../util/Constants";
 
 const recentsIcon = <RecentsIcon/>;
 const favIcon = <FavoriteIcon/>;

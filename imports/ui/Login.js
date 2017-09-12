@@ -4,8 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import {Link} from 'react-router';
 
-import Constants from './Constants';
-import Menu from './component/Menu';
+import Constants from './util/Constants';
+import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 
 export default class Login extends React.Component {
@@ -17,7 +17,7 @@ export default class Login extends React.Component {
     render() {
         return (
             <div>
-                <Menu
+                <TopBar
                     titulo="Entrar"/>
                 <TextField
                     floatingLabelText="E-mail"/><br/>
