@@ -25,17 +25,17 @@ export default class TopBar extends React.Component {
                             iconElementLeft={<IconMenu iconButtonElement={<IconButton><MenuIcon/></IconButton>}
                                                        anchorOrigin={{horizontal: 'left', vertical: 'top'}}
                                                        targetOrigin={{horizontal: 'left', vertical: 'top'}}>
-                                <MenuItem primaryText="Buscar peças" onClick={() => {
+                                <MenuItem primaryText='Buscar peças' onClick={() => {
                                     browserHistory.push('/')
                                 }}/>
                                 <MenuItem primaryText="Cadastrar peça para venda" onClick={() => {
                                     browserHistory.push('cadastrar')
                                 }}/>
-                                <MenuItem primaryText="Cadastrar peças em lote para venda" onClick={() => {
+                                <MenuItem primaryText='Cadastrar peças em lote para venda' onClick={() => {
                                     browserHistory.push('cadastrar-lote')
                                 }}/>
-                                <MenuItem primaryText="Minhas peças" onClick={() => {
-                                    browserHistory.push('minhasPecas')
+                                <MenuItem primaryText='Peças favoritas' onClick={() => {
+                                    browserHistory.push('pecas-favoritas')
                                 }}/>
                                 <MenuItem primaryText="Usuário" onClick={() => {
                                     browserHistory.push('usuario')

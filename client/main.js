@@ -10,7 +10,8 @@ import Usuario from '../imports/ui/Usuario';
 import BuscaPeca from '../imports/ui/BuscaPeca';
 import CadastroPeca from '../imports/ui/CadastroPeca';
 import CadastroPecaLote from "../imports/ui/CadastroPecaLote";
-import MinhasPecas from '../imports/ui/MinhasPecas';
+import PecasFavoritas from '../imports/ui/PecasFavoritas';
+import CompraPeca from "../imports/ui/CompraPeca";
 
 const muiTheme = getMuiTheme({
     appBar: {
@@ -25,7 +26,8 @@ Meteor.startup(() => {
                 <Route path="/" component={BuscaPeca}/>
                 <Route path="cadastrar" component={CadastroPeca}/>
                 <Route path="cadastrar-lote" component={CadastroPecaLote}/>
-                <Route path="minhasPecas" component={MinhasPecas}/>
+                <Route path="pecas-favoritas" component={PecasFavoritas}/>
+                <Route path="comprar-pecas" component={CompraPeca}/>
                 <Route path="usuario" component={Usuario}/>
                 <Route path="login" component={Login}/>
             </Router>

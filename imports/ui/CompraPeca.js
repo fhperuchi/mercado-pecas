@@ -6,34 +6,39 @@ import {Link} from 'react-router';
 import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
-import Upload from 'material-ui-upload/Upload';
+import ListaPecas from "./component/ListaPecas";
 
-export default class CadastroPecaLote extends React.Component {
+const pecas = [
+    {
+        _id: '1',
+        codigos: ['RCCR00384, RCCR00452, RCCS00584, RCCR00384, RCCR00452, RCCS00584'],
+        nome: 'Cilindro de roda',
+        aplicacoes: ['Gol, Parati'],
+        local: 'Limeira, São Paulo',
+        valor: 100.1
+    }
+];
+
+export default class CompraPeca extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            codigo: '',
-            nome: '',
-            aplicacoes: [],
-            valor: '',
-            dataExpiracao: null
+
         };
     }
-
-    onFileLoad = (e, file) => console.log(e.target.result, file.name);
 
     render() {
         return (
             <div>
-                <TopBar titulo='Cadastrar peças em lote para venda'/><br/>
-                <Upload label="Selecionar arquivo CSV" onFileLoad={this.onFileLoad}/><br/>
+                <TopBar titulo='Comprar peças'/>
+                <ListaPecas pecas={pecas} selectable={false}/>
                 <Divider/><br/>
-                <RaisedButton label='Cadastrar peças em lote'
+                <RaisedButton label='Confirmar compra'
                               primary
                               style={Constants.STYLES.textField}
                               onClick={() => {
-                                  alert('Peças cadastradas!')
+                                  alert('Peças compradas!')
                               }}/>
                 <Link to='/'>
                     <RaisedButton label='Voltar'

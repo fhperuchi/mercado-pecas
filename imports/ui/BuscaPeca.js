@@ -8,6 +8,7 @@ import DatePickerPt from './component/DatePickerPt';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 import ListaPecas from "./component/ListaPecas";
+import {Link} from "react-router";
 
 const pecas = [
     {
@@ -111,8 +112,10 @@ export default class BuscaPeca extends React.Component {
                         console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/><br/><br/>
                 <Divider/>
-                <ListaPecas pecas={pecas}/><br/>
-                <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
+                <ListaPecas pecas={pecas} favoritar={true} /><br/>
+                <Link to={'comprar-pecas'}>
+                    <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
+                </Link>
                 <BottomBar/>
             </div>
         );

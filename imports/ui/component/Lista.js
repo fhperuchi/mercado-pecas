@@ -3,7 +3,7 @@ import {List, ListItem} from 'material-ui/List';
 import Delete from 'material-ui/svg-icons/action/delete';
 import Constants from "../util/Constants";
 
-export default Lista = ({dataSource}) => {
+const Lista = ({dataSource}) => {
 
         return (
             <List style={Constants.STYLES.tamanhoMaior}>
@@ -13,3 +13,4 @@ export default Lista = ({dataSource}) => {
             </List>
         );
 };
+export default Lista;

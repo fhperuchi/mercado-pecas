@@ -28,8 +28,7 @@ const pecas = [
     }
 ];
 
-
-export default class MinhasPecas extends React.Component {
+export default class PecasFavoritas extends React.Component {
 
     componentWillMount() {
         console.log('lista de peças vai ser carregada...')
@@ -38,7 +37,7 @@ export default class MinhasPecas extends React.Component {
     render() {
         return (
             <div>
-                <TopBar titulo="Minhas peças"/><br/>
+                <TopBar titulo="Peças favoritas"/><br/>
                 <ListaPecas pecas={pecas}/>
                 <br/><Divider/><br/>
                 <RaisedButton
