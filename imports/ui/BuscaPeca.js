@@ -44,7 +44,7 @@ export default class BuscaPeca extends React.Component {
     }
 
     salvaAlteracao = (nomeInput, event) => {
-        var field = {};
+        let field = {};
         field[nomeInput] = event.target.value;
         this.setState(field);
     };
@@ -101,16 +101,16 @@ export default class BuscaPeca extends React.Component {
                     value={this.state.raioKm}
                     type={'number'}
                     onChange={this.salvaAlteracao.bind(this, 'raioKm')}
-                    floatingLabelText="Raio para busca"/> km
-                <br/><Divider/><br/>
+                    floatingLabelText="Raio para busca"/> km<br/>
+                <Divider/><br/>
                 <RaisedButton
                     label="Buscar peças"
                     primary={true}
                     style={Constants.STYLES.textField}
                     onClick={() => {
                         console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
-                    }}/>
-                <br/><br/><Divider/>
+                    }}/><br/><br/>
+                <Divider/>
                 <ListaPecas pecas={pecas}/><br/>
                 <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
                 <BottomBar/>

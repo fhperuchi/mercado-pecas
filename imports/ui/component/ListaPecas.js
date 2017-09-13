@@ -2,7 +2,7 @@ import React from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import Util from "../util/Util";
 
-export default Lista = ({pecas}) => {
+export default ListaPecas = ({pecas}) => {
 
     return (
         <Table selectable={true} multiSelectable={true}>

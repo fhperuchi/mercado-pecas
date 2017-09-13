@@ -12,12 +12,11 @@ import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 
-
 export default class Usuario extends React.Component {
 
     cadastrarUsuario = () => {
         alert('Usuario cadastrado');
-    }
+    };
 
     state = {checked: true, complemento: null};
 
@@ -34,41 +33,42 @@ export default class Usuario extends React.Component {
     render() {
         return (
             <div>
-                <TopBar titulo="Usuário"/>
-                <TextField floatingLabelText="E-mail"/><TextField floatingLabelText="Nome"/><br/>
-                <TextField floatingLabelText="CPF ou CNPJ"/><TextField floatingLabelText="Telefone"/><br/>
-                <TextField floatingLabelText="Endereço"/><TextField floatingLabelText="Numero" type={'number'}/><br/>
-                <TextField floatingLabelText="Bairro"/><SelectField floatingLabelText="Complemento"
-                                                                    value={this.state.complemento}
-                                                                    onChange={this.alteraComplemento}>
-                                                                    <MenuItem value={null} primaryText="" />
-                                                                    <MenuItem value={1} primaryText="Casa" />
-                                                                    <MenuItem value={2} primaryText="Apartamento" />
-                                                       </SelectField><br/>
+                <TopBar titulo='Usuário'/>
+                <TextField floatingLabelText='E-mail'/><TextField floatingLabelText='Nome'/><br/>
+                <TextField floatingLabelText='CPF ou CNPJ'/><TextField floatingLabelText='Telefone'/><br/>
+                <TextField floatingLabelText='Endereço'/><TextField floatingLabelText='Número'/><br/>
+                <TextField floatingLabelText='Bairro'/><TextField floatingLabelText='CEP'/><br/>
+                <SelectField floatingLabelText='Complemento'
+                             value={this.state.complemento}
+                             onChange={this.alteraComplemento}>
+                    <MenuItem value={null} primaryText=""/>
+                    <MenuItem value={1} primaryText="Casa"/>
+                    <MenuItem value={2} primaryText="Apartamento"/>
+                </SelectField><br/>
                 <AutoComplete
-                    floatingLabelText="Estado"
+                    floatingLabelText='Estado'
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={Constants.ESTADOS}/>
                 <AutoComplete
-                    floatingLabelText="Cidade"
+                    floatingLabelText='Cidade'
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={Constants.CIDADES}/>
                 <Checkbox
-                    label="Notificações"
+                    label='Notificações'
                     style={Constants.STYLES.checkbox}
                     checked={this.state.checked}
                     onCheck={this.updateCheck.bind(this)}
-                />
-                <br/><Divider/><br/>
+                /><br/>
+                <Divider/><br/>
                 <Link to="/">
                     <RaisedButton
-                        label="Salvar dados"
+                        label='Salvar dados'
                         primary style={Constants.STYLES.textField}
                         onClick={this.cadastrarUsuario}/>
                 </Link>
-                <Link to="/">
+                <Link to='/'>
                     <RaisedButton
-                        label="Voltar"
+                        label='Voltar'
                         secondary
                         style={Constants.STYLES.textField}/>
                 </Link><br/><br/>

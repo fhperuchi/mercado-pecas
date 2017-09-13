@@ -8,8 +8,6 @@ import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import {browserHistory} from 'react-router';
 import Paper from 'material-ui/Paper';
 
-
-
 export default class TopBar extends React.Component {
 
     constructor() {
@@ -32,6 +30,9 @@ export default class TopBar extends React.Component {
                                 }}/>
                                 <MenuItem primaryText="Cadastrar peça para venda" onClick={() => {
                                     browserHistory.push('cadastrar')
+                                }}/>
+                                <MenuItem primaryText="Cadastrar peças em lote para venda" onClick={() => {
+                                    browserHistory.push('cadastrar-lote')
                                 }}/>
                                 <MenuItem primaryText="Minhas peças" onClick={() => {
                                     browserHistory.push('minhasPecas')

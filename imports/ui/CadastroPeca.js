@@ -4,7 +4,6 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import {Link} from 'react-router';
-import Delete from 'material-ui/svg-icons/action/delete';
 
 import Constants from './util/Constants';
 import TopBar from './component/TopBar';
@@ -47,7 +46,7 @@ export default class CadastroPeca extends React.Component {
     }
 
     salvaAlteracao = (nomeInput, event) => {
-        var field = {};
+        let field = {};
         field[nomeInput] = event.target.value;
         this.setState(field);
     };
@@ -90,8 +89,8 @@ export default class CadastroPeca extends React.Component {
                     }}
                     onDismiss={() => {
                         this.setState({dataExpiracao: null})
-                    }}/>
-                <br/><Divider/><br/>
+                    }}/><br/>
+                <Divider/><br/>
                 <RaisedButton label='Cadastrar peça'
                               primary
                               style={Constants.STYLES.textField}
