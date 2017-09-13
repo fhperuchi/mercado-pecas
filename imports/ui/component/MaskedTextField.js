@@ -1,6 +1,7 @@
 import VMasker from 'vanilla-masker';
 import React from 'react';
 import * as UI from 'material-ui';
+import PropTypes from 'prop-types';
 
 class MaskedTextField extends React.Component {
 
@@ -26,7 +27,7 @@ class MaskedTextField extends React.Component {
 }
 
 MaskedTextField.propTypes = {
-    mask: React.PropTypes.string
+    mask: PropTypes.string
 };
 
 export default MaskedTextField;

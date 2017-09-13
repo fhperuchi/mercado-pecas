@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {List, ListItem} from 'material-ui/List';
 import Delete from 'material-ui/svg-icons/action/delete';
 import Constants from "../util/Constants";
@@ -15,6 +16,6 @@ const Lista = ({dataSource}) => {
 };
 
 Lista.propTypes = {
-    dataSource: React.PropTypes.array
+    dataSource: PropTypes.array
 };
 export default Lista;

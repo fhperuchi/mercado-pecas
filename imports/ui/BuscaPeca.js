@@ -26,7 +26,7 @@ export default class BuscaPeca extends React.Component {
         };
     }
 
-    salvaAlteracao = (nomeInput, event) => {
+    onChange = (nomeInput, event) => {
         let field = {};
         field[nomeInput] = event.target.value;
         this.setState(field);
@@ -41,23 +41,23 @@ export default class BuscaPeca extends React.Component {
                     id={"codigo"}
                     style={Constants.STYLES.tamanhoMaior}
                     value={this.state.codigo}
-                    onChange={this.salvaAlteracao.bind(this, 'codigo')}
+                    onChange={this.onChange.bind(this, 'codigo')}
                     floatingLabelText="Código da peça (digite sem espaços, pontos ou traços"/><br/>
                 <TextField
                     id={"nome"}
                     value={this.state.nome}
-                    onChange={this.salvaAlteracao.bind(this, 'nome')}
+                    onChange={this.onChange.bind(this, 'nome')}
                     floatingLabelText="Nome da peça"/><br/>
                 <TextField
                     id={"aplicacao"}
                     value={this.state.aplicacao}
-                    onChange={this.salvaAlteracao.bind(this, 'aplicacao')}
+                    onChange={this.onChange.bind(this, 'aplicacao')}
                     floatingLabelText="Aplicação da peça"/><br/>
                 <TextField
                     id={"valorMaximo"}
                     value={this.state.valorMaximo}
                     type={'number'}
-                    onChange={this.salvaAlteracao.bind(this, 'valorMaximo')}
+                    onChange={this.onChange.bind(this, 'valorMaximo')}
                     floatingLabelText="Valor máximo"/><br/>
                 <DatePickerPt
                     id={"dataInicio"}
@@ -83,7 +83,7 @@ export default class BuscaPeca extends React.Component {
                     id={"raioKm"}
                     value={this.state.raioKm}
                     type={'number'}
-                    onChange={this.salvaAlteracao.bind(this, 'raioKm')}
+                    onChange={this.onChange.bind(this, 'raioKm')}
                     floatingLabelText="Raio para busca"/> km<br/>
                 <Divider/><br/>
                 <RaisedButton
@@ -91,7 +91,7 @@ export default class BuscaPeca extends React.Component {
                     primary={true}
                     style={Constants.STYLES.textField}
                     onClick={() => {
-                        console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
+                        console.log('Busca realizada!')
                     }}/><br/><br/>
                 <Divider/>
                 <ListaPecas pecas={Mock.pecas()} favoritar={true} /><br/>

@@ -24,7 +24,7 @@ export default class CadastroPeca extends React.Component {
         };
     }
 
-    salvaAlteracao = (nomeInput, event) => {
+    onChange = (nomeInput, event) => {
         let field = {};
         field[nomeInput] = event.target.value;
         this.setState(field);
@@ -38,26 +38,26 @@ export default class CadastroPeca extends React.Component {
                     id={'codigo'}
                     style={Constants.STYLES.tamanhoMaior}
                     value={this.state.codigo}
-                    onChange={this.salvaAlteracao.bind(this, 'codigo')}
+                    onChange={this.onChange.bind(this, 'codigo')}
                     floatingLabelText='Códigos da peça (enter a cada novo código)'/><br/>
                 <Lista dataSource={Mock.codigos()} />
                 <TextField
                     id={'nome'}
                     value={this.state.nome}
-                    onChange={this.salvaAlteracao.bind(this, 'nome')}
+                    onChange={this.onChange.bind(this, 'nome')}
                     floatingLabelText='Nome (descrição) da peça'/><br/>
                 <TextField
                     id={'aplicacoes'}
                     style={Constants.STYLES.tamanhoMaior}
                     value={this.state.aplicacoes}
-                    onChange={this.salvaAlteracao.bind(this, 'aplicacoes')}
+                    onChange={this.onChange.bind(this, 'aplicacoes')}
                     floatingLabelText='Aplicações da peça (enter a cada nova aplicação)'/><br/>
                 <Lista dataSource={Mock.aplicacoes()} />
                 <TextField
                     id={'valor'}
                     value={this.state.valor}
                     type={'number'}
-                    onChange={this.salvaAlteracao.bind(this, 'valor')}
+                    onChange={this.onChange.bind(this, 'valor')}
                     floatingLabelText='Valor'/><br/>
                 <DatePickerPt
                     id={'dataExpiracao'}

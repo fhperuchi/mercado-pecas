@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import Util from "../util/Util";
 import IconButton from 'material-ui/IconButton';
@@ -37,6 +38,6 @@ const ListaPecas = ({pecas, selectable = true, favoritar = false}) => {
     );
 };
 ListaPecas.propTypes = {
-    pecas: React.PropTypes.array
+    pecas: PropTypes.array
 };
 export default ListaPecas;
