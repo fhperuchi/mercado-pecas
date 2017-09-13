@@ -9,28 +9,7 @@ import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 import Lista from "./component/Lista";
-
-// mock
-const codigos = [
-    {
-        _id: '1',
-        value: 'RCCR00384'
-    },
-    {
-        _id: '2',
-        value: 'RCCS00584'
-    }
-];
-const aplicacoes = [
-    {
-        _id: '1',
-        value: 'Gol'
-    },
-    {
-        _id: '2',
-        value: 'Parati'
-    }
-];
+import Mock from "./util/Mock";
 
 export default class CadastroPeca extends React.Component {
 
@@ -61,7 +40,7 @@ export default class CadastroPeca extends React.Component {
                     value={this.state.codigo}
                     onChange={this.salvaAlteracao.bind(this, 'codigo')}
                     floatingLabelText='Códigos da peça (enter a cada novo código)'/><br/>
-                <Lista dataSource={codigos}/>
+                <Lista dataSource={Mock.codigos()}/>
                 <TextField
                     id={'nome'}
                     value={this.state.nome}
@@ -73,7 +52,7 @@ export default class CadastroPeca extends React.Component {
                     value={this.state.aplicacoes}
                     onChange={this.salvaAlteracao.bind(this, 'aplicacoes')}
                     floatingLabelText='Aplicações da peça (enter a cada nova aplicação)'/><br/>
-                <Lista dataSource={aplicacoes} />
+                <Lista dataSource={Mock.aplicacoes()} />
                 <TextField
                     id={'valor'}
                     value={this.state.valor}

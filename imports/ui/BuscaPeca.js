@@ -9,25 +9,7 @@ import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 import ListaPecas from "./component/ListaPecas";
 import {Link} from "react-router";
-
-const pecas = [
-    {
-        _id: '1',
-        codigos: ['RCCR00384, RCCR00452, RCCS00584, RCCR00384, RCCR00452, RCCS00584'],
-        nome: 'Cilindro de roda',
-        aplicacoes: ['Gol, Parati'],
-        local: 'Limeira, São Paulo',
-        valor: 100.1
-    },
-    {
-        _id: '2',
-        codigos: ['RPDI00400'],
-        nome: 'Disco de freio',
-        aplicacoes: ['Fiesta, Focus'],
-        local: 'Piracicaba, São Paulo',
-        valor: 10000.21
-    }
-];
+import Mock from "./util/Mock";
 
 export default class BuscaPeca extends React.Component {
 
@@ -112,7 +94,7 @@ export default class BuscaPeca extends React.Component {
                         console.log(`${this.state.dataInicio}\n${this.state.dataFim}`)
                     }}/><br/><br/>
                 <Divider/>
-                <ListaPecas pecas={pecas} favoritar={true} /><br/>
+                <ListaPecas pecas={Mock.pecas()} favoritar={true} /><br/>
                 <Link to={'comprar-pecas'}>
                     <RaisedButton label="Comprar selecionadas" primary/><br/><br/>
                 </Link>
