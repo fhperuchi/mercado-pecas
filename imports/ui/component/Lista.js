@@ -13,4 +13,8 @@ const Lista = ({dataSource}) => {
             </List>
         );
 };
+
+Lista.propTypes = {
+    dataSource: React.PropTypes.array
+};
 export default Lista;

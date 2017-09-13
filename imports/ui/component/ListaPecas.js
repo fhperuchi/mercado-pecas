@@ -36,4 +36,7 @@ const ListaPecas = ({pecas, selectable = true, favoritar = false}) => {
         </Table>
     );
 };
+ListaPecas.propTypes = {
+    pecas: React.PropTypes.array
+};
 export default ListaPecas;

@@ -40,7 +40,7 @@ export default class CadastroPeca extends React.Component {
                     value={this.state.codigo}
                     onChange={this.salvaAlteracao.bind(this, 'codigo')}
                     floatingLabelText='Códigos da peça (enter a cada novo código)'/><br/>
-                <Lista dataSource={Mock.codigos()}/>
+                <Lista dataSource={Mock.codigos()} />
                 <TextField
                     id={'nome'}
                     value={this.state.nome}
