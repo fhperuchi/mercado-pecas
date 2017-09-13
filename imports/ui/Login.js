@@ -12,7 +12,7 @@ export default class Login extends React.Component {
 
     login = () => {
         alert('Logado!')
-    }
+    };
 
     render() {
         return (

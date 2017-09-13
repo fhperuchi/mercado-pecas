@@ -5723,7 +5723,7 @@ const estadosCidades = {
             ]
         }
     ]
-}
+};
 
 let estados = [];
 let cidades = [];
