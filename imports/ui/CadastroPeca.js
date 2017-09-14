@@ -24,43 +24,43 @@ export default class CadastroPeca extends React.Component {
         };
     }
 
-    onChange = (nomeInput, event) => {
-        let field = {};
-        field[nomeInput] = event.target.value;
-        this.setState(field);
+    handleInputChange = event => {
+        const { target } = event;
+        this.setState({ [target.name]: target.value });
     };
 
     render() {
         return (
             <div>
                 <TopBar titulo='Cadastrar peça para venda'/>
+
                 <TextField
-                    id={'codigo'}
+                    name="codigo"
                     style={Constants.STYLES.tamanhoMaior}
                     value={this.state.codigo}
-                    onChange={this.onChange.bind(this, 'codigo')}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Códigos da peça (enter a cada novo código)'/><br/>
                 <Lista dataSource={Mock.codigos()} />
                 <TextField
-                    id={'nome'}
+                    name="nome"
                     value={this.state.nome}
-                    onChange={this.onChange.bind(this, 'nome')}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Nome (descrição) da peça'/><br/>
                 <TextField
-                    id={'aplicacoes'}
+                    name="aplicacoes"
                     style={Constants.STYLES.tamanhoMaior}
                     value={this.state.aplicacoes}
-                    onChange={this.onChange.bind(this, 'aplicacoes')}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Aplicações da peça (enter a cada nova aplicação)'/><br/>
                 <Lista dataSource={Mock.aplicacoes()} />
                 <TextField
-                    id={'valor'}
+                    name="valor"
                     value={this.state.valor}
                     type={'number'}
-                    onChange={this.onChange.bind(this, 'valor')}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Valor'/><br/>
                 <DatePickerPt
-                    id={'dataExpiracao'}
+                    name="dataExpiracao"
                     value={this.state.dataExpiracao}
                     hintText={'Data de expiração do anúncio'}
                     onChange={(event, date) => {

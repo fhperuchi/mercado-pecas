@@ -8,10 +8,10 @@ import Divider from 'material-ui/Divider';
 import Checkbox from 'material-ui/Checkbox';
 import {Link} from 'react-router';
 
+import MaskedTextField from "./component/MaskedTextField";
 import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
-import MaskedTextField from "./component/MaskedTextField";
 
 export default class Usuario extends React.Component {
     constructor() {
@@ -34,8 +34,7 @@ export default class Usuario extends React.Component {
     }
 
     cadastrarUsuario = () => {
-        console.log(`CPF: ${this.state.cpf}`);
-        console.log(`CNPJ: ${this.state.cnpj}`);
+        console.log(`email: ${this.state.email}`);
         alert('Usuario cadastrado');
     };
 
@@ -49,20 +48,15 @@ export default class Usuario extends React.Component {
 
     alteraComplemento = (event, index, complemento) => this.setState({complemento});
 
-    alteraCpf = (nomeInput, value) => {
-        const field = {};
-        field[nomeInput] = value;
-        field['cnpj'] = '';
-        document.querySelector('#cnpj').value = '';
-        this.setState(field);
-    };
-
-    alteraCnpj = (nomeInput, value) => {
-        const field = {};
-        field[nomeInput] = value;
-        field['cpf'] = '';
-        document.querySelector('#cpf').value = '';
-        this.setState(field);
+    handleInputChange = event => {
+        const { target } = event;
+        this.setState({ [target.name]: target.value });
+        if (target.name === 'cpf') {
+            this.setState({ cnpj: '' })
+        }
+        if (target.name === 'cnpj') {
+            this.setState({ cpf: '' })
+        }
     };
 
     render() {
@@ -70,40 +64,55 @@ export default class Usuario extends React.Component {
             <div>
                 <TopBar titulo='Usuário'/>
                 <TextField
-                    id={'email'}
-                    floatingLabelText='E-mail'/>
+                    name="email"
+                    value={this.state.email}
+                    floatingLabelText='E-mail'
+                    onChange={this.handleInputChange}/>
                 <TextField
-                    id={'nome'}
-                    floatingLabelText='Nome da pessoa ou empresa'/><br/>
-                <MaskedTextField
-                    id={'cpf'}
+                    name="nome"
+                    value={this.state.nome}
+                    floatingLabelText='Nome da pessoa ou empresa'
+                    onChange={this.handleInputChange}/><br/>
+                <TextField
+                    name="cpf"
+                    value={this.state.cpf}
                     floatingLabelText='CPF da pessoa'
                     mask={'999.999.999-99'}
-                    onBlur={this.alteraCpf.bind(this, 'cpf')}/> ou &nbsp;
-                <MaskedTextField
-                    id={'cnpj'}
+                    onChange={this.handleInputChange}/> ou &nbsp;
+                <TextField
+                    name="cnpj"
+                    value={this.state.cnpj}
                     floatingLabelText='CNPJ da empresa'
                     mask={'99.999.999/9999-99'}
-                    onBlur={this.alteraCnpj.bind(this, 'cnpj')}/><br/>
+                    onChange={this.handleInputChange}/><br/>
                 <MaskedTextField
-                    id={'telefone'}
+                    name="telefone"
+                    value={this.state.telefone}
                     floatingLabelText='Telefone'
                     mask={'(99) 9999-99999'}/>
                 <TextField
-                    id={'endereco'}
+                    name="endereco"
+                    value={this.state.endereco}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Endereço'/><br/>
                 <TextField
-                    id={'numero'}
+                    name="numero"
+                    value={this.state.numero}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Número'/>
                 <TextField
-                    id={'bairro'}
+                    name="bairro'"
+                    value={this.state.bairro}
+                    onChange={this.handleInputChange}
                     floatingLabelText='Bairro'/><br/>
                 <MaskedTextField
-                    id={'cep'}
+                    name="cep"
+                    value={this.state.cep}
+                    onChange={this.handleInputChange}
                     floatingLabelText='CEP'
                     mask={'99999-999'} />
                 <SelectField
-                    id={'complemento'}
+                    name="complemento"
                     value={this.state.complemento}
                     floatingLabelText='Complemento'
                     onChange={this.alteraComplemento}>
@@ -112,19 +121,19 @@ export default class Usuario extends React.Component {
                     <MenuItem value={2} primaryText="Apartamento"/>
                 </SelectField><br/>
                 <AutoComplete
-                    id={'estado'}
+                    name="estado"
                     value={this.state.estado}
                     floatingLabelText='Estado'
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={Constants.ESTADOS}/>
                 <AutoComplete
-                    id={'cidade'}
+                    name="cidade"
                     value={this.state.cidade}
                     floatingLabelText='Cidade'
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={Constants.CIDADES}/><br/><br/>
                 <Checkbox
-                    id={'receberNotificacoes'}
+                    name="receberNotificacoes"
                     label='Receber notificações?'
                     style={Constants.STYLES.checkbox}
                     checked={this.state.receberNotificacoes}
