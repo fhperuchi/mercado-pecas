@@ -89,7 +89,7 @@ export default class Usuario extends React.Component {
                     onInput={(e) => this.limitNumber(e, 10) }
                     type="number"
                     value={this.state.cpf}
-                    floatingLabelText='CPF da pessoa'
+                    floatingLabelText='CPF da pessoa (só números)'
                     mask={'999.999.999-99'}
                     onChange={this.handleInputChange}/> ou &nbsp;
                 <TextField
@@ -97,7 +97,7 @@ export default class Usuario extends React.Component {
                     type="number"
                     onInput={(e) => this.limitNumber(e, 14) }
                     value={this.state.cnpj}
-                    floatingLabelText='CNPJ da empresa'
+                    floatingLabelText='CNPJ da empresa (só números)'
                     mask={'99.999.999/9999-99'}
                     onChange={this.handleInputChange}/><br/>
                 <MaskedTextField
@@ -145,6 +145,7 @@ export default class Usuario extends React.Component {
                     name="cidade"
                     value={this.state.cidade}
                     floatingLabelText='Cidade'
+                    onBlur={this.handleInputChange}
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={this.state.cidades}/><br/><br/>
                 <Checkbox
@@ -164,7 +165,7 @@ export default class Usuario extends React.Component {
                         label='Voltar'
                         secondary
                         style={Constants.STYLES.textField}/>
-                </Link>
+                </Link><br/><br/>
                 <BottomBar/>
             </div>
         )
