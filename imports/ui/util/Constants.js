@@ -5725,16 +5725,6 @@ const estadosCidades = {
     ]
 };
 
-let estados = [];
-let cidades = [];
-for (let i = 0; i < estadosCidades.estados.length; i++) {
-    let estado = estadosCidades.estados[i];
-    estados.push(estado.nome);
-    for (let j = 0; j < estado.cidades.length; j++) {
-        cidades.push(estado.cidades[j]);
-    }
-}
-
 const Constants = {
     STYLES: {
         bottomBar: {
@@ -5753,8 +5743,9 @@ const Constants = {
             marginBottom: 16,
         }
     },
-    ESTADOS: estados,
-    CIDADES: cidades
+    ESTADOS_SIGLAS: estadosCidades.estados.map(estado => estado.sigla),
+    ESTADOS: estadosCidades.estados
 };
+
 
 export default Constants;

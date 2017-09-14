@@ -26,15 +26,15 @@ export default class Usuario extends React.Component {
             numero: '',
             cep: '',
             bairro: '',
-            cidade: '',
             estado: '',
+            cidade: '',
+            cidades: [],
             receberNotificacoes: true,
             complemento: null
         };
     }
 
     cadastrarUsuario = () => {
-        console.log(`email: ${this.state.email}`);
         alert('Usuario cadastrado');
     };
 
@@ -57,7 +57,18 @@ export default class Usuario extends React.Component {
         if (target.name === 'cnpj') {
             this.setState({ cpf: '' })
         }
+        if (target.name === 'estado') {
+            Constants.ESTADOS.map( estado => {
+                if (estado.sigla === target.value) {
+                    this.setState({ cidades: estado.cidades })
+                }
+            });
+        }
     };
+
+    limitNumber(e, max) {
+        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, max)
+    }
 
     render() {
         return (
@@ -75,12 +86,16 @@ export default class Usuario extends React.Component {
                     onChange={this.handleInputChange}/><br/>
                 <TextField
                     name="cpf"
+                    onInput={(e) => this.limitNumber(e, 10) }
+                    type="number"
                     value={this.state.cpf}
                     floatingLabelText='CPF da pessoa'
                     mask={'999.999.999-99'}
                     onChange={this.handleInputChange}/> ou &nbsp;
                 <TextField
                     name="cnpj"
+                    type="number"
+                    onInput={(e) => this.limitNumber(e, 14) }
                     value={this.state.cnpj}
                     floatingLabelText='CNPJ da empresa'
                     mask={'99.999.999/9999-99'}
@@ -101,14 +116,13 @@ export default class Usuario extends React.Component {
                     onChange={this.handleInputChange}
                     floatingLabelText='Número'/>
                 <TextField
-                    name="bairro'"
+                    name="bairro"
                     value={this.state.bairro}
                     onChange={this.handleInputChange}
                     floatingLabelText='Bairro'/><br/>
                 <MaskedTextField
                     name="cep"
                     value={this.state.cep}
-                    onChange={this.handleInputChange}
                     floatingLabelText='CEP'
                     mask={'99999-999'} />
                 <SelectField
@@ -124,14 +138,15 @@ export default class Usuario extends React.Component {
                     name="estado"
                     value={this.state.estado}
                     floatingLabelText='Estado'
+                    onBlur={this.handleInputChange}
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={Constants.ESTADOS}/>
+                    dataSource={Constants.ESTADOS_SIGLAS}/>
                 <AutoComplete
                     name="cidade"
                     value={this.state.cidade}
                     floatingLabelText='Cidade'
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={Constants.CIDADES}/><br/><br/>
+                    dataSource={this.state.cidades}/><br/><br/>
                 <Checkbox
                     name="receberNotificacoes"
                     label='Receber notificações?'
@@ -154,4 +169,5 @@ export default class Usuario extends React.Component {
             </div>
         )
     }
+
 }
