@@ -2,6 +2,7 @@ import Pecas from '../imports/core/models/Pecas';
 import Estados from '../imports/core/models/Estados';
 import Fabricantes from '../imports/core/models/Fabricantes';
 
+
 /*Pecas.remove({});
 Pecas.insert({
     codigos: ['RCCR00384','RCCS00584'],
@@ -18,10 +19,12 @@ Pecas.insert({
     dataExpiracao: new Date()
 });*/
 
+
 /*Estados.remove({});
 JSON.parse(Assets.getText("data/estados.json")).estados.map(estado => {
     Estados.insert(estado);
 });*/
+
 
 /*Fabricantes.remove({});
 JSON.parse(Assets.getText("data/fabricantes.json")).fabricantes.map(fabricante => {
