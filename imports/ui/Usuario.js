@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
@@ -12,7 +13,6 @@ import MaskedTextField from "./component/MaskedTextField";
 import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
-import EstadosCollection from '../collections/EstadosCollection';
 
 export default class Usuario extends React.Component {
     constructor() {
@@ -32,7 +32,7 @@ export default class Usuario extends React.Component {
             cidades: [],
             receberNotificacoes: true,
             complemento: null,
-            estados: EstadosCollection.find({}).fetch().map(estado => estado._id)
+            estados: []
         };
     }
 
@@ -60,14 +60,27 @@ export default class Usuario extends React.Component {
             this.setState({ cpf: '' })
         }
         if (target.name === 'estado') {
-            this.setState({ cidades: EstadosCollection.findOne({_id: target.value.toString()}).cidades })
-
+            Meteor.call('cidadesByNomeEstado', {nome: target.value}, (err, res) => {
+                err ? console.log(err) : this.setState({cidade: '', cidades: res});
+            });
         }
     };
 
     limitNumber(e, max) {
         e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, max)
     }
+
+    componentWillMount() {
+        Meteor.call('estados', {}, (err, res) => {
+            err ? console.log(err) : this.setState({estados: res});
+        });
+    }
+
+    handleUpdateInput = (searchText) => {
+        this.setState({
+            cidade: searchText
+        });
+    };
 
     render() {
         return (
@@ -139,12 +152,18 @@ export default class Usuario extends React.Component {
                     floatingLabelText='Estado'
                     onBlur={this.handleInputChange}
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={this.state.estados}/>
+                    openOnFocus={true}
+                    dataSource={this.state.estados}
+                    dataSourceConfig={{text: 'nome',value: 'nome'}}
+                />
                 <AutoComplete
                     name="cidade"
+                    searchText={this.state.cidade}
                     value={this.state.cidade}
                     floatingLabelText='Cidade'
+                    openOnFocus={true}
                     onBlur={this.handleInputChange}
+                    onUpdateInput={this.handleUpdateInput}
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={this.state.cidades}/><br/><br/>
                 <Checkbox

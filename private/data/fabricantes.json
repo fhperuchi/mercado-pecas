@@ -1,0 +1,25 @@
+{
+  "fabricantes": [
+    {
+      "nome": "TRW"
+    },
+    {
+      "nome": "Monroe"
+    },
+    {
+      "nome": "Cofap"
+    },
+    {
+      "nome": "ZF"
+    },
+    {
+      "nome": "Michelin"
+    },
+    {
+      "nome": "Pirelli"
+    },
+    {
+      "nome": "Goodyear"
+    }
+  ]
+}

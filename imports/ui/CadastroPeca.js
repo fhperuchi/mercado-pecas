@@ -1,8 +1,10 @@
+import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import DatePickerPt from './component/DatePickerPt';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
+import AutoComplete from 'material-ui/AutoComplete';
 import {Link} from 'react-router';
 
 import Constants from './util/Constants';
@@ -11,6 +13,7 @@ import BottomBar from './component/BottomBar';
 import Lista from "./component/Lista";
 import Mock from "./util/Mock";
 
+
 export default class CadastroPeca extends React.Component {
 
     constructor() {
@@ -18,9 +21,11 @@ export default class CadastroPeca extends React.Component {
         this.state = {
             codigo: '',
             nome: '',
-            aplicacoes: [],
+            aplicacao: '',
             valor: '',
-            dataExpiracao: null
+            dataExpiracao: null,
+            fabricante: '',
+            fabricantes: []
         };
     }
 
@@ -29,11 +34,26 @@ export default class CadastroPeca extends React.Component {
         this.setState({ [target.name]: target.value });
     };
 
+    componentWillMount() {
+        Meteor.call('fabricantes', {}, (err, res) => {
+            err ? console.log(err) : this.setState({fabricantes: res});
+        });
+    }
+
     render() {
         return (
             <div>
                 <TopBar titulo='Cadastrar peça para venda'/>
-
+                <AutoComplete
+                    name="fabricante"
+                    value={this.state.fabricante}
+                    floatingLabelText='Fabricante'
+                    filter={AutoComplete.caseInsensitiveFilter}
+                    dataSource={this.state.fabricantes}
+                    dataSourceConfig={{text: 'nome',value: '_id'}}
+                    openOnFocus={true}
+                    onBlur={this.handleInputChange}
+                /><br/>
                 <TextField
                     name="codigo"
                     style={Constants.STYLES.tamanhoMaior}
@@ -47,9 +67,9 @@ export default class CadastroPeca extends React.Component {
                     onChange={this.handleInputChange}
                     floatingLabelText='Nome (descrição) da peça'/><br/>
                 <TextField
-                    name="aplicacoes"
+                    name="aplicacao"
                     style={Constants.STYLES.tamanhoMaior}
-                    value={this.state.aplicacoes}
+                    value={this.state.aplicacao}
                     onChange={this.handleInputChange}
                     floatingLabelText='Aplicações da peça (enter a cada nova aplicação)'/><br/>
                 <Lista dataSource={Mock.aplicacoes()} />

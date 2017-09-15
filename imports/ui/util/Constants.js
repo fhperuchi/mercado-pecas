@@ -15,7 +15,6 @@ const Constants = {
         checkbox: {
             marginBottom: 16,
         }
-    },
-
+    }
 };
 export default Constants;
