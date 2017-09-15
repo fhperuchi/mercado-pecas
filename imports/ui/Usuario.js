@@ -12,6 +12,7 @@ import MaskedTextField from "./component/MaskedTextField";
 import Constants from './util/Constants';
 import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
+import EstadosCollection from '../collections/EstadosCollection';
 
 export default class Usuario extends React.Component {
     constructor() {
@@ -30,7 +31,8 @@ export default class Usuario extends React.Component {
             cidade: '',
             cidades: [],
             receberNotificacoes: true,
-            complemento: null
+            complemento: null,
+            estados: EstadosCollection.find({}).fetch().map(estado => estado._id)
         };
     }
 
@@ -58,11 +60,8 @@ export default class Usuario extends React.Component {
             this.setState({ cpf: '' })
         }
         if (target.name === 'estado') {
-            Constants.ESTADOS.map( estado => {
-                if (estado.sigla === target.value) {
-                    this.setState({ cidades: estado.cidades })
-                }
-            });
+            this.setState({ cidades: EstadosCollection.findOne({_id: target.value.toString()}).cidades })
+
         }
     };
 
@@ -140,7 +139,7 @@ export default class Usuario extends React.Component {
                     floatingLabelText='Estado'
                     onBlur={this.handleInputChange}
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={Constants.ESTADOS_SIGLAS}/>
+                    dataSource={this.state.estados}/>
                 <AutoComplete
                     name="cidade"
                     value={this.state.cidade}
@@ -170,5 +169,4 @@ export default class Usuario extends React.Component {
             </div>
         )
     }
-
 }

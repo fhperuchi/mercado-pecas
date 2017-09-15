@@ -1,8 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import PecasCollection from '../imports/collections/PecasCollection';
+import EstadosCollection from '../imports/collections/EstadosCollection';
 
 Meteor.startup(() => {
-    PecasCollection.remove({});
+    /*PecasCollection.remove({});
     PecasCollection.insert({
         codigos: ['RCCR00384','RCCS00584'],
         nome: 'Cilindro de roda',
@@ -17,4 +18,8 @@ Meteor.startup(() => {
         valor: 1500.10,
         dataExpiracao: new Date()
     });
+    EstadosCollection.remove({});
+    JSON.parse(Assets.getText("data/estados.json")).estados.map(estado => {
+        EstadosCollection.insert(estado);
+    });*/
 });
