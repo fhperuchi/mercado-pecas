@@ -154,7 +154,7 @@ export default class Usuario extends React.Component {
                     filter={AutoComplete.caseInsensitiveFilter}
                     openOnFocus={true}
                     dataSource={this.state.estados}
-                    dataSourceConfig={{text: 'nome',value: 'nome'}} />
+                    dataSourceConfig={{text: 'nome',value: 'nome'}}/>
                 <AutoComplete
                     name="cidade"
                     value={this.state.cidade}
