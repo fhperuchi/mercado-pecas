@@ -158,8 +158,8 @@ export default class Usuario extends React.Component {
                 />
                 <AutoComplete
                     name="cidade"
-                    searchText={this.state.cidade}
                     value={this.state.cidade}
+                    searchText={this.state.cidade}
                     floatingLabelText='Cidade'
                     openOnFocus={true}
                     onBlur={this.handleInputChange}
