@@ -76,7 +76,7 @@ export default class Usuario extends React.Component {
         });
     }
 
-    handleUpdateInput = (searchText) => {
+    autoCompleteCidadeUpdateInput = (searchText) => {
         this.setState({
             cidade: searchText
         });
@@ -163,7 +163,7 @@ export default class Usuario extends React.Component {
                     floatingLabelText='Cidade'
                     openOnFocus={true}
                     onBlur={this.handleInputChange}
-                    onUpdateInput={this.handleUpdateInput}
+                    onUpdateInput={this.autoCompleteCidadeUpdateInput}
                     filter={AutoComplete.caseInsensitiveFilter}
                     dataSource={this.state.cidades}/><br/><br/>
                 <Checkbox
