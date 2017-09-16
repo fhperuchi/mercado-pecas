@@ -1,5 +1,4 @@
-# mercado-pecas
-Mercado das Peças
+# Mercado das Peças
 
 Se ainda não tiver o Meteor instalado, instale o mesmo: https://www.meteor.com/install
 
