@@ -82,7 +82,7 @@ export default class CadastroPeca extends React.Component {
                 <DatePickerPt
                     name="dataExpiracao"
                     value={this.state.dataExpiracao}
-                    hintText={'Data de expiração do anúncio'}
+                    floatingLabelText="Data expiração do anúncio"
                     onChange={(event, date) => {
                         this.setState({dataExpiracao: date})
                     }}
