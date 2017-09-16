@@ -13,6 +13,10 @@ export default class DatePickerPt extends React.Component {
                 cancelLabel='Cancelar'
                 container={'inline'}
                 locale='pt'
+                style={{
+                    display: 'inline-block',
+                    position:'relative'
+                }}
                 DateTimeFormat={IntlPolyfill.DateTimeFormat}
             />
         );

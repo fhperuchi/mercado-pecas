@@ -95,7 +95,8 @@ export default class Usuario extends React.Component {
                     name="nome"
                     value={this.state.nome}
                     floatingLabelText='Nome da pessoa ou empresa'
-                    onChange={this.handleInputChange}/><br/>
+                    onChange={this.handleInputChange}/>
+                <br/>
                 <TextField
                     name="cpf"
                     onInput={(e) => this.limitNumber(e, 10) }
@@ -111,7 +112,8 @@ export default class Usuario extends React.Component {
                     value={this.state.cnpj}
                     floatingLabelText='CNPJ da empresa (só números)'
                     mask={'99.999.999/9999-99'}
-                    onChange={this.handleInputChange}/><br/>
+                    onChange={this.handleInputChange}/>
+                <br/>
                 <MaskedTextField
                     name="telefone"
                     value={this.state.telefone}
@@ -121,7 +123,8 @@ export default class Usuario extends React.Component {
                     name="endereco"
                     value={this.state.endereco}
                     onChange={this.handleInputChange}
-                    floatingLabelText='Endereço'/><br/>
+                    floatingLabelText='Endereço'/>
+                <br/>
                 <TextField
                     name="numero"
                     value={this.state.numero}
@@ -131,7 +134,8 @@ export default class Usuario extends React.Component {
                     name="bairro"
                     value={this.state.bairro}
                     onChange={this.handleInputChange}
-                    floatingLabelText='Bairro'/><br/>
+                    floatingLabelText='Bairro'/>
+                <br/>
                 <MaskedTextField
                     name="cep"
                     value={this.state.cep}
@@ -145,7 +149,8 @@ export default class Usuario extends React.Component {
                     <MenuItem value={null} primaryText=""/>
                     <MenuItem value={1} primaryText="Casa"/>
                     <MenuItem value={2} primaryText="Apartamento"/>
-                </SelectField><br/>
+                </SelectField>
+                <br/>
                 <AutoComplete
                     name="estado"
                     value={this.state.estado}
@@ -154,7 +159,7 @@ export default class Usuario extends React.Component {
                     filter={AutoComplete.caseInsensitiveFilter}
                     openOnFocus={true}
                     dataSource={this.state.estados}
-                    dataSourceConfig={{text: 'nome',value: 'nome'}}/>
+                    dataSourceConfig={{text: 'nome', value: 'nome'}}/>
                 <AutoComplete
                     name="cidade"
                     value={this.state.cidade}
@@ -164,15 +169,16 @@ export default class Usuario extends React.Component {
                     onBlur={this.handleInputChange}
                     onUpdateInput={this.autoCompleteCidadeUpdateInput}
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={this.state.cidades}/><br/><br/>
+                    dataSource={this.state.cidades}/>
+                <br/><br/>
                 <Checkbox
                     name="receberNotificacoes"
                     label='Receber notificações?'
                     style={Constants.STYLES.checkbox}
                     checked={this.state.receberNotificacoes}
-                    onCheck={this.updateCheck.bind(this)}
-                />
-                <Divider/><br/>
+                    onCheck={this.updateCheck.bind(this)}/>
+                <Divider/>
+                <br/>
                 <RaisedButton
                     label='Salvar dados'
                     primary style={Constants.STYLES.textField}
@@ -182,7 +188,8 @@ export default class Usuario extends React.Component {
                         label='Voltar'
                         secondary
                         style={Constants.STYLES.textField}/>
-                </Link><br/><br/>
+                </Link>
+                <br/><br/>
                 <BottomBar/>
             </div>
         )

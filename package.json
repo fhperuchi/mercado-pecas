@@ -1,5 +1,6 @@
 {
   "name": "mercado-pecas",
+  "description": "Mercado das Peças",
   "version": "0.1.0",
   "private": true,
   "scripts": {
