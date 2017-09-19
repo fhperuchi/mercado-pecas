@@ -7,26 +7,8 @@ import TopBar from './component/TopBar';
 import BottomBar from './component/BottomBar';
 import Constants from './util/Constants';
 import ListaPecas from "./component/ListaPecas";
+import Mock from "./util/Mock";
 
-// mock
-const pecas = [
-    {
-        _id: '1',
-        codigos: ['RCCR00384, RCCR00452, RCCS00584, RCCR00384, RCCR00452, RCCS00584'],
-        nome: 'Cilindro de roda',
-        aplicacoes: ['Gol, Parati'],
-        local: 'Limeira, São Paulo',
-        valor: 100.1
-    },
-    {
-        _id: '2',
-        codigos: ['RPDI00400'],
-        nome: 'Disco de freio',
-        aplicacoes: ['Fiesta, Focus'],
-        local: 'Piracicaba, São Paulo',
-        valor: 1324.21
-    }
-];
 
 export default class PecasFavoritas extends React.Component {
 
@@ -38,7 +20,7 @@ export default class PecasFavoritas extends React.Component {
         return (
             <div>
                 <TopBar titulo="Peças favoritas"/><br/>
-                <ListaPecas pecas={pecas}/>
+                <ListaPecas pecas={Mock.pecas()}/>
                 <br/><Divider/><br/>
                 <RaisedButton
                     label="Remover"
